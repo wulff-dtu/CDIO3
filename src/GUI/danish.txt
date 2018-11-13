@@ -23,7 +23,7 @@ turn_menu_option2
 Check stillingen
 
 turn_menu_option3
-End Game
+Stop spillet
 
 end_game_congratulations
 Tillykke,
