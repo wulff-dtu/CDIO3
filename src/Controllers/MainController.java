@@ -36,8 +36,7 @@ public class MainController {
         do {
             turnMenu();
         } while (!game.isWinnerFound());
-        String winner = game.getPlayers()[game.getPlayerTurnIndex()].getName();
-        gui.displayWinner(winner);
+        gui.displayWinner(game.getWinner().getName());
     }
 
     public void turnMenu() {

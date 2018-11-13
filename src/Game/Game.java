@@ -8,6 +8,7 @@ public class Game {
     private Turn turn;
     private int playerTurnIndex;
     private boolean winnerFound;
+    private Player winner;
 
     public Game(String[] playerNames) {
         addPlayers(playerNames);
@@ -29,7 +30,10 @@ public class Game {
 
     public void newTurn() {
         turn = new Turn(players[playerTurnIndex], board, diceCup);
-        if (players[playerTurnIndex].getBankroll().getBalance() >= 3000) winnerFound = true;
+        if (players[playerTurnIndex].getBankroll().getBalance() >= 3000) {
+            winnerFound = true;
+            winner = players[playerTurnIndex];
+        }
         playerTurnIndex++;
         if (playerTurnIndex == players.length) playerTurnIndex = 0;
     }
@@ -67,5 +71,9 @@ public class Game {
 
     public DiceCup getDiceCup() {
         return diceCup;
+    }
+
+    public Player getWinner() {
+        return winner;
     }
 }
