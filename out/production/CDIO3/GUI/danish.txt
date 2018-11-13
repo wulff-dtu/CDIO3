@@ -1,0 +1,86 @@
+main_menu_header
+Velkommen!
+
+main_menu_option1
+Start spillet
+
+main_menu_option2
+Regler
+
+main_menu_option3
+Sprog
+
+main_menu_option4
+Forlad spillet
+
+turn_menu_header
+, hvad vil du gøre?
+
+turn_menu_option1
+Kast terningerne
+
+turn_menu_option2
+Check stillingen
+
+turn_menu_option3
+End Game
+
+end_game_congratulations
+Tillykke,
+
+end_game_youwon
+du vandt!
+
+board_tower_message
+Yay, du fandt 250 I et tårn. Du bliver rigere!
+
+board_crater_message
+Åh nej! Du faldt ned i et krater. -100.
+
+board_palace_gates_message
+Du passerede paladsets porte og fik 100! Godt for dig.
+
+board_cold_desert_message
+Uh, du landede i den kolde ørken. -20.
+
+board_walled_city_message
+Du er gået ind i den indhegnede by. Nice! Du får 180.
+
+board_monastery_message
+Du fordriver tiden lidt i klosteret, væk fra resten af verdens problemer. Ingen effekt på din økonomi.
+
+board_black_cave_message
+Åh nej. Du landede i den sorte grotte. Grottemonstrene tog 70 fra dig.
+
+board_huts_message
+Du fandt 60 i hytterne på bjerget, hurra.
+
+board_werewall_message
+Ups, du rørte ved Varvæggen og varulven åd 80. Du får dog lov at kaste terningerne igen.
+
+board_pit_message
+Du faldt ned i en skakt og mistede 50
+
+board_goldmine_message
+Du har fundet guld i bjergene og sælger det for 650, du er rig!
+
+rules
+Spillerne slår på skift med 2 terninger og lander på et felt med numrene fra 2 - 12. At lande på hvert af disse felter har en positiv eller negativ effekt på spillernes pengebeholdning. Spillerne begynder spillet med en pengebeholdning på 1000. En spiller vinder spillet ved at nå 3000.
+
+change_language_header
+Vælg sprog:
+
+change_language_english
+Engelsk
+
+change_language_danish
+Dansk
+
+invalid_input
+Ugyldigt input. Prøv igen.
+
+main_start_howmanyplayers
+Vælg antal af spillere:
+
+main_start_writeplayername
+Indtast navn på spiller

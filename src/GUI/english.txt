@@ -1,0 +1,86 @@
+main_menu_header
+Welcome!
+
+main_menu_option1
+Start Game
+
+main_menu_option2
+Rules
+
+main_menu_option3
+Language
+
+main_menu_option4
+Exit
+
+turn_menu_header
+, what will you do?
+
+turn_menu_option1
+Roll the dice
+
+turn_menu_option2
+Check the score
+
+turn_menu_option3
+End Game
+
+end_game_congratulations
+Congratulations,
+
+end_game_youwon
+you won the Game!
+
+board_tower_message
+Yay, you found 250 in a tower. Getting richer!
+
+board_crater_message
+Oh no! You fell into a crater. -100.
+
+board_palace_gates_message
+You entered the palace gates and received 100! Good for you.
+
+board_cold_desert_message
+Uh, you landed in the cold desert. -20.
+
+board_walled_city_message
+You entered the walled city. Nice! You receive 180
+
+board_monastery_message
+You are passing some time in the monastery away from the trouble of the rest of the world. No effect on your economy.
+
+board_black_cave_message
+Oh no. You landed in the black cave. The cave monsters took 70.
+
+board_huts_message
+You found 60 in the huts in the mountain, hooray.
+
+board_werewall_message
+Oops, you touched the Werewall and the werewolf ate 80. You get to cast the dice again though.
+
+board_pit_message
+You fell into a pit and lost 50
+
+board_goldmine_message
+You found gold in the mountains and sell it for 650, you’re rich!
+
+rules
+The players take turns rolling two dice, landing on tiles numbered 2-12. Landing on each of these tiles have a positive or negative effect on the players’ bankroll. The players have a bankroll of 1000 when the Game starts. A player wins the Game by reaching 3000.
+
+change_language_header
+Please choose your language:
+
+change_language_english
+English
+
+change_language_danish
+Danish
+
+invalid_input
+Invalid input. Try again.
+
+main_start_howmanyplayers
+Please choose number of players:
+
+main_start_writeplayername
+Please enter the name of player
