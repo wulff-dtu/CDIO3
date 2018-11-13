@@ -44,6 +44,7 @@ public class MainController {
         switch (gui.turnMenu(game.getPlayers()[game.getPlayerTurnIndex()].getName())) {
             case 1 :
                 game.newTurn();
+                gui.displayDice(game.getDiceCup().getValueArray());
                 gui.displayTurnMessage(game.getTurn().getTile().getMessage());
                 if (game.getTurn().getTile().grantsExtraTurn()) {
                     if (game.getPlayerTurnIndex() != 0) {

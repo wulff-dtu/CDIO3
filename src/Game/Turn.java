@@ -15,4 +15,5 @@ public class Turn {
     public Tile getTile() {
         return tile;
     }
+
 }

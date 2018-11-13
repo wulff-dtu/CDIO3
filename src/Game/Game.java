@@ -64,4 +64,8 @@ public class Game {
     public void setPlayerTurnIndex(int playerTurnIndex) {
         this.playerTurnIndex = playerTurnIndex;
     }
+
+    public DiceCup getDiceCup() {
+        return diceCup;
+    }
 }

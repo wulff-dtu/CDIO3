@@ -34,5 +34,17 @@ public class DiceCup {
     public int getSum() {
         return sum;
     }
+
+    public Die[] getDice() {
+        return dice;
+    }
+
+    public int[] getValueArray() {
+        int[] diceValues = new int[dice.length];
+        for (int i = 0; i < dice.length; i++) {
+            diceValues[i] = dice[i].getValue();
+        }
+        return diceValues;
+    }
 }
 

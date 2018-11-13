@@ -90,4 +90,8 @@ public class GUIController {
             language.changeLanguage("danish");
         }
     }
+
+    public void displayDice(int[] dice) {
+        gui.setDice(dice[0], dice[1]);
+    }
 }
