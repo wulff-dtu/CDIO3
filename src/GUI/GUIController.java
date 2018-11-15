@@ -1,15 +1,21 @@
 package GUI;
 
 import gui_main.GUI;
+import gui_fields.*;
+import Game.Board;
 
 public class GUIController {
 
     private GUI gui;
+    private GUI_Field[] GUIboard;
     private Language language;
 
-    public GUIController() {
-        gui = new GUI();
+    public GUIController(Board board) {
+
         language = new Language("english");
+        GUIboard = new GUIBoard(language, board).getFields();
+        gui = new GUI(GUIboard);
+
     }
 
     public int mainMenu() {

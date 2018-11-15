@@ -31,38 +31,194 @@ Congratulations,
 end_game_youwon
 you won the Game!
 
-board_tower_message
-Yay, you found 250 in a tower. Getting richer!
+board_burgerbar_title
+Burger bar
 
-board_crater_message
-Oh no! You fell into a crater. -100.
+board_burgerbar_subtext
+placeholder
 
-board_palace_gates_message
-You entered the palace gates and received 100! Good for you.
+board_burgerbar_description
+placeholder
 
-board_cold_desert_message
-Uh, you landed in the cold desert. -20.
+board_pizzaria_title
+Pizzaria
 
-board_walled_city_message
-You entered the walled city. Nice! You receive 180
+board_pizzaria_subtext
+placeholder
 
-board_monastery_message
-You are passing some time in the monastery away from the trouble of the rest of the world. No effect on your economy.
+board_pizzaria_description
+placeholder
 
-board_black_cave_message
-Oh no. You landed in the black cave. The cave monsters took 70.
+board_candystore_title
+Candy shop
 
-board_huts_message
-You found 60 in the huts in the mountain, hooray.
+board_candystore_subtext
+placeholder
 
-board_werewall_message
-Oops, you touched the Werewall and the werewolf ate 80. You get to cast the dice again though.
+board_candystore_description
+placeholder
 
-board_pit_message
-You fell into a pit and lost 50
+board_icecream_title
+Ice cream shop
 
-board_goldmine_message
-You found gold in the mountains and sell it for 650, you’re rich!
+board_icecream_subtext
+placeholder
+
+board_icecream_description
+placeholder
+
+board_museum_title
+Museum
+
+board_museum_subtext
+placeholder
+
+board_museum_description
+placeholder
+
+board_library_title
+Library
+
+board_library_subtext
+placeholder
+
+board_library_description
+placeholder
+
+board_skatepark_title
+Skate park
+
+board_skatepark_subtext
+placeholder
+
+board_skatepark_description
+placeholder
+
+board_swimmingpool_title
+Swimming pool
+
+board_swimmingpool_subtext
+placeholder
+
+board_swimmingpool_description
+placeholder
+
+board_gamearcade_title
+Game arcade
+
+board_gamearcade_subtext
+placeholder
+
+board_gamearcade_description
+placeholder
+
+board_cinema_title
+Cinema
+
+board_cinema_subtext
+placeholder
+
+board_cinema_description
+placeholder
+
+board_toystore_title
+Toy store
+
+board_toystore_subtext
+placeholder
+
+board_toystore_description
+placeholder
+
+board_petshop_title
+Pet shop
+
+board_petshop_subtext
+petshop
+
+board_petshop_description
+placeholder
+
+board_bowlinghall_title
+Bowling hall
+
+board_bowlinghall_subtext
+placeholder
+
+board_bowlinghall_description
+placeholder
+
+board_zoo_title
+Zoo
+
+board_zoo_subtext
+placeholder
+
+board_zoo_description
+placeholder
+
+board_waterpark_title
+Water park
+
+board_waterpark_subtext
+placeholder
+
+board_waterpark_description
+placeholder
+
+board_seafront_title
+Seafront
+
+board_seafront_subtext
+placeholder
+
+board_seafront_description
+placeholder
+
+board_start_title
+Start
+
+board_start_subtext
+placeholder
+
+board_start_description
+placeholder
+
+board_chance_title
+Chance
+
+board_chance_subtext
+placeholder
+
+board_chance_description
+placeholder
+
+board_jailonvisit_title
+On visit
+
+board_jailonvisit_subtext
+placeholder
+
+board_jailonvisit_description
+placeholder
+
+board_freeparking_title
+Free parking
+
+board_freeparking_subtext
+placeholder
+
+board_freeparking_description
+placeholder
+
+board_gotojail_title
+Go to jail
+
+board_gotojail_subtext
+placeholder
+
+board_gotojail_description
+placeholder
 
 rules
 The players take turns rolling two dice, landing on tiles numbered 2-12. Landing on each of these tiles have a positive or negative effect on the players’ bankroll. The players have a bankroll of 1000 when the Game starts. A player wins the Game by reaching 3000.

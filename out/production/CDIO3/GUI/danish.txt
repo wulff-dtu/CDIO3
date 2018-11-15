@@ -23,7 +23,7 @@ turn_menu_option2
 Check stillingen
 
 turn_menu_option3
-End Game
+Stop spillet
 
 end_game_congratulations
 Tillykke,
@@ -31,38 +31,194 @@ Tillykke,
 end_game_youwon
 du vandt!
 
-board_tower_message
-Yay, du fandt 250 I et tårn. Du bliver rigere!
+board_burgerbar_title
+Burger bar
 
-board_crater_message
-Åh nej! Du faldt ned i et krater. -100.
+board_burgerbar_subtext
+placeholder
 
-board_palace_gates_message
-Du passerede paladsets porte og fik 100! Godt for dig.
+board_burgerbar_description
+placeholder
 
-board_cold_desert_message
-Uh, du landede i den kolde ørken. -20.
+board_pizzaria_title
+Pizzaria
 
-board_walled_city_message
-Du er gået ind i den indhegnede by. Nice! Du får 180.
+board_pizzaria_subtext
+placeholder
 
-board_monastery_message
-Du fordriver tiden lidt i klosteret, væk fra resten af verdens problemer. Ingen effekt på din økonomi.
+board_pizzaria_description
+placeholder
 
-board_black_cave_message
-Åh nej. Du landede i den sorte grotte. Grottemonstrene tog 70 fra dig.
+board_candystore_title
+Candy shop
 
-board_huts_message
-Du fandt 60 i hytterne på bjerget, hurra.
+board_candystore_subtext
+placeholder
 
-board_werewall_message
-Ups, du rørte ved Varvæggen og varulven åd 80. Du får dog lov at kaste terningerne igen.
+board_candystore_description
+placeholder
 
-board_pit_message
-Du faldt ned i en skakt og mistede 50
+board_icecream_title
+Ice cream shop
 
-board_goldmine_message
-Du har fundet guld i bjergene og sælger det for 650, du er rig!
+board_icecream_subtext
+placeholder
+
+board_icecream_description
+placeholder
+
+board_museum_title
+Museum
+
+board_museum_subtext
+placeholder
+
+board_museum_description
+placeholder
+
+board_library_title
+Library
+
+board_library_subtext
+placeholder
+
+board_library_description
+placeholder
+
+board_skatepark_title
+Skate park
+
+board_skatepark_subtext
+placeholder
+
+board_skatepark_description
+placeholder
+
+board_swimmingpool_title
+Swimming pool
+
+board_swimmingpool_subtext
+placeholder
+
+board_swimmingpool_description
+placeholder
+
+board_gamearcade_title
+Game arcade
+
+board_gamearcade_subtext
+placeholder
+
+board_gamearcade_description
+placeholder
+
+board_cinema_title
+Cinema
+
+board_cinema_subtext
+placeholder
+
+board_cinema_description
+placeholder
+
+board_toystore_title
+Legetøjsbutik
+
+board_toystore_subtext
+placeholder
+
+board_toystore_description
+placeholder
+
+board_petshop_title
+Pet shop
+
+board_petshop_subtext
+petshop
+
+board_petshop_description
+placeholder
+
+board_bowlinghall_title
+Bowling hall
+
+board_bowlinghall_subtext
+placeholder
+
+board_bowlinghall_description
+placeholder
+
+board_zoo_title
+Zoo
+
+board_zoo_subtext
+placeholder
+
+board_zoo_description
+placeholder
+
+board_waterpark_title
+Water park
+
+board_waterpark_subtext
+placeholder
+
+board_waterpark_description
+placeholder
+
+board_seafront_title
+Strandpromenade
+
+board_seafront_subtext
+placeholder
+
+board_seafront_description
+placeholder
+
+board_start_title
+Start
+
+board_start_subtext
+placeholder
+
+board_start_description
+placeholder
+
+board_chance_title
+Chance
+
+board_chance_subtext
+placeholder
+
+board_chance_description
+placeholder
+
+board_jailonvisit_title
+På besøg
+
+board_jailonvisit_subtext
+placeholder
+
+board_jailonvisit_description
+placeholder
+
+board_freeparking_title
+Gratis parkering
+
+board_freeparking_subtext
+placeholder
+
+board_freeparking_description
+placeholder
+
+board_gotojail_title
+Gå i fængsel
+
+board_gotojail_subtext
+placeholder
+
+board_gotojail_description
+placeholder
 
 rules
 Spillerne slår på skift med 2 terninger og lander på et felt med numrene fra 2 - 12. At lande på hvert af disse felter har en positiv eller negativ effekt på spillernes pengebeholdning. Spillerne begynder spillet med en pengebeholdning på 1000. En spiller vinder spillet ved at nå 3000.

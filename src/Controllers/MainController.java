@@ -1,15 +1,18 @@
 package Controllers;
 
 import Game.Game;
+import Game.Board;
 import GUI.GUIController;
 
 public class MainController {
 
     private Game game;
+    private Board board;
     private GUIController gui;
 
     public MainController() {
-        gui = new GUIController();
+        board = new Board();
+        gui = new GUIController(board);
         mainMenu();
     }
 
@@ -44,7 +47,7 @@ public class MainController {
             case 1 :
                 game.newTurn();
                 gui.displayDice(game.getDiceCup().getValueArray());
-                gui.displayTurnMessage(game.getTurn().getTile().getMessage());
+                gui.displayTurnMessage(game.getTurn().getTile().getTitle());
                 if (game.getTurn().getTile().grantsExtraTurn()) {
                     if (game.getPlayerTurnIndex() != 0) {
                         game.setPlayerTurnIndex(game.getPlayerTurnIndex() - 1);
