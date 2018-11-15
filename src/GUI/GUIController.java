@@ -1,20 +1,20 @@
 package GUI;
 
 import gui_main.GUI;
-import gui_fields.*;
 import Game.Board;
 
 public class GUIController {
 
     private GUI gui;
-    private GUI_Field[] GUIboard;
+    private Board board;
+    private GUIBoard GUIboard;
     private Language language;
 
     public GUIController(Board board) {
-
+        this.board = board;
         language = new Language("english");
-        GUIboard = new GUIBoard(language, board).getFields();
-        gui = new GUI(GUIboard);
+        GUIboard = new GUIBoard(language, board);
+        gui = new GUI(GUIboard.getFields());
 
     }
 
@@ -95,6 +95,7 @@ public class GUIController {
         } else if (input.equals(option2)) {
             language.changeLanguage("danish");
         }
+        GUIboard.updtateFields(language);
     }
 
     public void displayDice(int[] dice) {

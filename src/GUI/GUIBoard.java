@@ -9,34 +9,10 @@ import java.awt.*;
 public class GUIBoard {
 
     private GUI_Field[] fields;
+    private Tile[] tiles;
 
     public GUIBoard(Language language, Board board) {
-        /*
-        fields = new GUI_Field[24];
-        fields[0] = new GUI_Start(language.getString("board_start_title"), language.getString("board_start_subtext"), language.getString("board_start_description"), Color.red, Color.white);
-        fields[1] = new GUI_Street(language.getString("board_start_title"), language.getString("board_start_subtext"), language.getString("board_start_description"), , Color.red, Color.white);
-        fields[2] = new GUI_Street();
-        fields[3] = new GUI_Chance();
-        fields[4] = new GUI_Street();
-        fields[5] = new GUI_Street();
-        fields[6] = new GUI_Jail();
-        fields[7] = new GUI_Street();
-        fields[8] = new GUI_Street();
-        fields[9] = new GUI_Chance();
-        fields[10] = new GUI_Street();
-        fields[11] = new GUI_Street();
-        fields[12] = new GUI_Refuge();
-        fields[13] = new GUI_Street();
-        fields[14] = new GUI_Street();
-        fields[15] = new GUI_Chance();
-        fields[16] = new GUI_Street();
-        fields[17] = new GUI_Street();
-        fields[18] = new GUI_Jail();
-        fields[19] = new GUI_Street();
-        fields[20] = new GUI_Street();
-        fields[21] = new GUI_Chance();
-        fields[22] = new GUI_Street();
-        fields[23] = new GUI_Street();*/
+        this.tiles = board.getTiles();
         Tile[] tiles = board.getTiles();
         fields = new GUI_Field[24];
         for (int i = 0; i < tiles.length; i++) {
@@ -65,5 +41,13 @@ public class GUIBoard {
 
     public GUI_Field[] getFields() {
         return fields;
+    }
+
+    public void updtateFields(Language language) {
+        for (int i = 0; i < tiles.length; i++) {
+            fields[i].setTitle(language.getString(tiles[i].getTitle()));
+            fields[i].setSubText(language.getString(tiles[i].getSubtext()));
+            fields[i].setDescription(language.getString(tiles[i].getDescription()));
+        }
     }
 }
