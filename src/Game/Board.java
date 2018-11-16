@@ -4,6 +4,9 @@ public class Board {
 
     private Tile[] tiles;
 
+    /**
+     * Board constructor.
+     */
     public Board() {
         tiles = new Tile[24];
         tiles[0] = new Tile("start", 0, "board_start_title", "board_start_subtext", "board_start_description",2, false);

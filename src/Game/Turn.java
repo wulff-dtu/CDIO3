@@ -9,6 +9,7 @@ public class Turn {
         diceCup.throwDice();
         diceThrow = diceCup.getSum();
         tile = board.getTiles()[diceThrow -2];
+        player.changePosition(diceThrow);
         player.getBankroll().changeBalance(tile.getEffectOnBalance());
     }
 

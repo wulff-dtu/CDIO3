@@ -35,7 +35,7 @@ board_burgerbar_title
 Burger bar
 
 board_burgerbar_subtext
-placeholder
+Price:
 
 board_burgerbar_description
 placeholder
@@ -44,7 +44,7 @@ board_pizzaria_title
 Pizzaria
 
 board_pizzaria_subtext
-placeholder
+Price:
 
 board_pizzaria_description
 placeholder
@@ -53,7 +53,7 @@ board_candystore_title
 Candy shop
 
 board_candystore_subtext
-placeholder
+Price:
 
 board_candystore_description
 placeholder
@@ -62,7 +62,7 @@ board_icecream_title
 Ice cream shop
 
 board_icecream_subtext
-placeholder
+Price:
 
 board_icecream_description
 placeholder
@@ -71,7 +71,7 @@ board_museum_title
 Museum
 
 board_museum_subtext
-placeholder
+Price:
 
 board_museum_description
 placeholder
@@ -80,7 +80,7 @@ board_library_title
 Library
 
 board_library_subtext
-placeholder
+Price:
 
 board_library_description
 placeholder
@@ -89,7 +89,7 @@ board_skatepark_title
 Skate park
 
 board_skatepark_subtext
-placeholder
+Price:
 
 board_skatepark_description
 placeholder
@@ -98,7 +98,7 @@ board_swimmingpool_title
 Swimming pool
 
 board_swimmingpool_subtext
-placeholder
+Price:
 
 board_swimmingpool_description
 placeholder
@@ -107,7 +107,7 @@ board_gamearcade_title
 Game arcade
 
 board_gamearcade_subtext
-placeholder
+Price:
 
 board_gamearcade_description
 placeholder
@@ -116,7 +116,7 @@ board_cinema_title
 Cinema
 
 board_cinema_subtext
-placeholder
+Price:
 
 board_cinema_description
 placeholder
@@ -125,7 +125,7 @@ board_toystore_title
 Toy store
 
 board_toystore_subtext
-placeholder
+Price:
 
 board_toystore_description
 placeholder
@@ -134,7 +134,7 @@ board_petshop_title
 Pet shop
 
 board_petshop_subtext
-petshop
+Price:
 
 board_petshop_description
 placeholder
@@ -143,7 +143,7 @@ board_bowlinghall_title
 Bowling hall
 
 board_bowlinghall_subtext
-placeholder
+Price:
 
 board_bowlinghall_description
 placeholder
@@ -152,7 +152,7 @@ board_zoo_title
 Zoo
 
 board_zoo_subtext
-placeholder
+Price:
 
 board_zoo_description
 placeholder
@@ -161,7 +161,7 @@ board_waterpark_title
 Water park
 
 board_waterpark_subtext
-placeholder
+Price:
 
 board_waterpark_description
 placeholder
@@ -170,7 +170,7 @@ board_seafront_title
 Seafront
 
 board_seafront_subtext
-placeholder
+Price:
 
 board_seafront_description
 placeholder
@@ -179,7 +179,7 @@ board_start_title
 Start
 
 board_start_subtext
-placeholder
+Receive:
 
 board_start_description
 placeholder
@@ -188,7 +188,7 @@ board_chance_title
 Chance
 
 board_chance_subtext
-placeholder
+
 
 board_chance_description
 placeholder
@@ -197,7 +197,7 @@ board_jailonvisit_title
 On visit
 
 board_jailonvisit_subtext
-placeholder
+On visit
 
 board_jailonvisit_description
 placeholder
@@ -206,7 +206,7 @@ board_freeparking_title
 Free parking
 
 board_freeparking_subtext
-placeholder
+Free parking
 
 board_freeparking_description
 placeholder
@@ -215,7 +215,7 @@ board_gotojail_title
 Go to jail
 
 board_gotojail_subtext
-placeholder
+Go to jail
 
 board_gotojail_description
 placeholder

@@ -17,7 +17,6 @@ public class Game {
         board = new Board();
         diceCup = new DiceCup();
         diceCup.addDie(6);
-        diceCup.addDie(6);
         winnerFound = false;
     }
 
@@ -75,5 +74,9 @@ public class Game {
 
     public Player getWinner() {
         return winner;
+    }
+
+    public Board getBoard() {
+        return board;
     }
 }

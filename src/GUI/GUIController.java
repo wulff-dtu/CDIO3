@@ -3,6 +3,8 @@ package GUI;
 import gui_main.GUI;
 import Game.Board;
 
+import java.awt.*;
+
 public class GUIController {
 
     private GUI gui;
@@ -14,10 +16,15 @@ public class GUIController {
         this.board = board;
         language = new Language("english");
         GUIboard = new GUIBoard(language, board);
-        gui = new GUI(GUIboard.getFields());
+        gui = new GUI(GUIboard.getFields(), new Color(55, 89, 50));
 
     }
 
+    /**
+     * @return
+     * Displays the main menu with four options/buttons.
+     * Returns an integer from 1-4.
+     */
     public int mainMenu() {
         String option1 = language.getString("main_menu_option1");
         String option2 = language.getString("main_menu_option2");
@@ -100,5 +107,9 @@ public class GUIController {
 
     public void displayDice(int[] dice) {
         gui.setDice(dice[0], dice[1]);
+    }
+
+    public void displayPlayers() {
+
     }
 }

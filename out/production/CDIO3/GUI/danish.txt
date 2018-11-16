@@ -35,7 +35,7 @@ board_burgerbar_title
 Burgerbaren
 
 board_burgerbar_subtext
-placeholder
+Pris:
 
 board_burgerbar_description
 placeholder
@@ -44,7 +44,7 @@ board_pizzaria_title
 Pizzariaet
 
 board_pizzaria_subtext
-placeholder
+Pris:
 
 board_pizzaria_description
 placeholder
@@ -53,7 +53,7 @@ board_candystore_title
 Slikbutikken
 
 board_candystore_subtext
-placeholder
+Pris:
 
 board_candystore_description
 placeholder
@@ -62,7 +62,7 @@ board_icecream_title
 Iskiosken
 
 board_icecream_subtext
-placeholder
+Pris:
 
 board_icecream_description
 placeholder
@@ -71,7 +71,7 @@ board_museum_title
 Museet
 
 board_museum_subtext
-placeholder
+Pris:
 
 board_museum_description
 placeholder
@@ -80,7 +80,7 @@ board_library_title
 Biblioteket
 
 board_library_subtext
-placeholder
+Pris:
 
 board_library_description
 placeholder
@@ -89,16 +89,16 @@ board_skatepark_title
 Skaterparken
 
 board_skatepark_subtext
-placeholder
+Pris:
 
 board_skatepark_description
 placeholder
 
 board_swimmingpool_title
-Swimmingpoolen
+Swimming-\npoolen
 
 board_swimmingpool_subtext
-placeholder
+Pris:
 
 board_swimmingpool_description
 placeholder
@@ -107,7 +107,7 @@ board_gamearcade_title
 Spillehallen
 
 board_gamearcade_subtext
-placeholder
+Pris:
 
 board_gamearcade_description
 placeholder
@@ -116,16 +116,16 @@ board_cinema_title
 Biografen
 
 board_cinema_subtext
-placeholder
+Pris:
 
 board_cinema_description
 placeholder
 
 board_toystore_title
-Legetøjsbutikken
+Legetøjs-\nbutikken
 
 board_toystore_subtext
-placeholder
+Pris:
 
 board_toystore_description
 placeholder
@@ -134,7 +134,7 @@ board_petshop_title
 Dyrehandlen
 
 board_petshop_subtext
-petshop
+Pris:
 
 board_petshop_description
 placeholder
@@ -143,7 +143,7 @@ board_bowlinghall_title
 Bowlinghallen
 
 board_bowlinghall_subtext
-placeholder
+Pris:
 
 board_bowlinghall_description
 placeholder
@@ -152,25 +152,25 @@ board_zoo_title
 Zoo
 
 board_zoo_subtext
-placeholder
+Pris:
 
 board_zoo_description
 placeholder
 
 board_waterpark_title
-Vandlandet
+Vand-\nlandet
 
 board_waterpark_subtext
-placeholder
+Pris:
 
 board_waterpark_description
 placeholder
 
 board_seafront_title
-Strandpromenaden
+Strand-\npromenaden
 
 board_seafront_subtext
-placeholder
+Pris:
 
 board_seafront_description
 placeholder
@@ -179,7 +179,7 @@ board_start_title
 Start
 
 board_start_subtext
-placeholder
+Modtag:
 
 board_start_description
 placeholder
@@ -188,7 +188,7 @@ board_chance_title
 Chance
 
 board_chance_subtext
-placeholder
+
 
 board_chance_description
 placeholder
@@ -197,7 +197,7 @@ board_jailonvisit_title
 På besøg
 
 board_jailonvisit_subtext
-placeholder
+På besøg
 
 board_jailonvisit_description
 placeholder
@@ -206,7 +206,7 @@ board_freeparking_title
 Gratis parkering
 
 board_freeparking_subtext
-placeholder
+Parkering
 
 board_freeparking_description
 placeholder
@@ -215,7 +215,7 @@ board_gotojail_title
 Gå i fængsel
 
 board_gotojail_subtext
-placeholder
+Gå i fængsel
 
 board_gotojail_description
 placeholder
