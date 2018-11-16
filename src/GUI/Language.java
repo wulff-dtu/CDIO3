@@ -100,10 +100,17 @@ public class Language {
     }
 
     private void mapStrings() {
-        map = new HashMap<>();
-        for(String id : stringsID) {
-            map.put(id, searchFileforString(id));
+        try {
+            Scanner scanner = new Scanner(file);
+            map = new HashMap<>();
+            for(String id : stringsID) {
+                map.put(id, searchFileforString(id));
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
         }
+
+
     }
 
     /**
@@ -112,7 +119,7 @@ public class Language {
      * as one line of the messageID followed by one line of the actual message
      */
     private String searchFileforString(String stringID) {
-        String message = "";
+        String message = "StringID: \"" + stringID + "\" not found.";
         try {
             Scanner scanner = new Scanner(file);
             while (scanner.hasNextLine()) {
@@ -123,8 +130,10 @@ public class Language {
                 }
             }
             scanner.close();
+            if(message.equals("StringID: \"" + stringID + "\" not found."))
+                System.err.println("A key-value set does not match!");
         } catch(FileNotFoundException e) {
-            System.out.println("stringID does not exist in file!");
+            System.out.println("File doesn't exist!");
         }
         return message;
     }

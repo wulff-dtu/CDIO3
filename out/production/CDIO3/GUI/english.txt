@@ -175,7 +175,7 @@ Price:
 board_seafront_description
 placeholder
 
-board_start_title
+board_start_titl
 Start
 
 board_start_subtext
