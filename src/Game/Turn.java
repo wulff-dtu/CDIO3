@@ -8,8 +8,9 @@ public class Turn {
     public Turn(Player player, Board board, DiceCup diceCup) {
         diceCup.throwDice();
         diceThrow = diceCup.getSum();
-        tile = board.getTiles()[diceThrow -2];
+        //tile = board.getTiles()[diceThrow -2];
         player.changePosition(diceThrow);
+        tile =  board.getTiles()[player.getPosition()];
         player.getBankroll().changeBalance(tile.getEffectOnBalance());
     }
 

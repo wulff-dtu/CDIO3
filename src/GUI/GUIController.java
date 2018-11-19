@@ -1,5 +1,6 @@
 package GUI;
 
+import gui_fields.GUI_Field;
 import gui_fields.GUI_Player;
 import gui_main.GUI;
 import Game.Board;
@@ -91,7 +92,7 @@ public class GUIController {
     public void displayRules() {
         String rules = language.getString("rules");
         rules += "\n";
-        rules = rules.replaceAll("(.{1,50})\\s+", "$1\n");
+        rules = rules.replaceAll("(.{1,350})\\s+", "$1\n");
         gui.showMessage(rules);
     }
 
@@ -113,7 +114,6 @@ public class GUIController {
         } else if (dice.length == 2) {
             gui.setDice(dice[0], dice[1]);
         }
-
     }
 
     public void addPlayers(String[] names, int[] balances) {
@@ -125,7 +125,12 @@ public class GUIController {
     }
 
     public void displayPlayers(int[] positions) {
-
-
+        GUI_Field[] fields =  GUIboard.getFields();
+        for (GUI_Field field : fields) {
+            field.removeAllCars();
+        }
+        for (int i = 0; i < positions.length; i++) {
+            fields[positions[i]].setCar(gui_players[i], true);
+        }
     }
 }
