@@ -117,6 +117,7 @@ public class GUIController {
     }
 
     public void addPlayers(String[] names, int[] balances) {
+        removeAllPlayers();
         gui_players = new GUI_Player[names.length];
         for (int i = 0; i < names.length; i++) {
             gui_players[i] = new GUI_Player(names[i], balances[i]);
@@ -126,11 +127,16 @@ public class GUIController {
 
     public void displayPlayers(int[] positions) {
         GUI_Field[] fields =  GUIboard.getFields();
-        for (GUI_Field field : fields) {
-            field.removeAllCars();
-        }
+        removeAllPlayers();
         for (int i = 0; i < positions.length; i++) {
             fields[positions[i]].setCar(gui_players[i], true);
+        }
+    }
+
+    public void removeAllPlayers() {
+        GUI_Field[] fields =  GUIboard.getFields();
+        for (GUI_Field field : fields) {
+            field.removeAllCars();
         }
     }
 }

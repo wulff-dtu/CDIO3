@@ -92,6 +92,7 @@ public class MainController {
                 turnMenu();
                 break;
             case 3 :
+                gui.removeAllPlayers();
                 mainMenu();
                 break;
         }
