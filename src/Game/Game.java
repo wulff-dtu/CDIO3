@@ -79,4 +79,28 @@ public class Game {
     public Board getBoard() {
         return board;
     }
+
+    public int[] getPlayerPositions() {
+        int[] positions = new int[players.length];
+        for (int i = 0; i < players.length; i++) {
+            positions[i] = players[i].getPosition();
+        }
+        return positions;
+    }
+
+    public String[] getPlayerNames() {
+        String[] names = new String[players.length];
+        for (int i = 0; i < players.length; i++) {
+            names[i] = players[i].getName();
+        }
+        return names;
+    }
+
+    public int[] getPlayerBalances() {
+        int[] names = new int[players.length];
+        for (int i = 0; i < players.length; i++) {
+            names[i] = players[i].getBankroll().getBalance();
+        }
+        return names;
+    }
 }

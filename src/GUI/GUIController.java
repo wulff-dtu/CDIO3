@@ -1,5 +1,6 @@
 package GUI;
 
+import gui_fields.GUI_Player;
 import gui_main.GUI;
 import Game.Board;
 
@@ -9,6 +10,7 @@ public class GUIController {
 
     private GUI gui;
     private Board board;
+    private GUI_Player[] gui_players;
     private GUIBoard GUIboard;
     private Language language;
 
@@ -106,10 +108,24 @@ public class GUIController {
     }
 
     public void displayDice(int[] dice) {
-        gui.setDice(dice[0], dice[1]);
+        if (dice.length == 1) {
+            gui.setDie(dice[0]);
+        } else if (dice.length == 2) {
+            gui.setDice(dice[0], dice[1]);
+        }
+
     }
 
-    public void displayPlayers() {
+    public void addPlayers(String[] names, int[] balances) {
+        gui_players = new GUI_Player[names.length];
+        for (int i = 0; i < names.length; i++) {
+            gui_players[i] = new GUI_Player(names[i], balances[i]);
+            GUIboard.getFields()[0].setCar(gui_players[i], true);
+        }
+    }
+
+    public void displayPlayers(int[] positions) {
+
 
     }
 }

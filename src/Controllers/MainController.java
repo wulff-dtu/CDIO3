@@ -53,6 +53,7 @@ public class MainController {
      */
     public void startGame() {
         game = new Game(gui.promptPlayerNames());
+        gui.addPlayers(game.getPlayerNames(), game.getPlayerBalances());
         do {
             turnMenu();
         } while (!game.isWinnerFound());
@@ -78,7 +79,7 @@ public class MainController {
                     }
 
                 }
-                gui.displayPlayers();
+                gui.displayPlayers(game.getPlayerPositions());
                 break;
             case 2 :
                 String[] playerNames = new String[game.getPlayers().length];
