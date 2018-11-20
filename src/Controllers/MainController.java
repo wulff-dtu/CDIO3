@@ -58,6 +58,7 @@ public class MainController {
             turnMenu();
         } while (!game.isWinnerFound());
         gui.displayWinner(game.getWinner().getName());
+        gui.removeAllPlayers();
     }
 
     /**
