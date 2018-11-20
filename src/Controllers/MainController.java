@@ -71,14 +71,6 @@ public class MainController {
                 game.newTurn();
                 gui.displayDice(game.getDiceCup().getValueArray());
                 gui.displayTurnMessage(game.getTurn().getTile().getTitle());
-                if (game.getTurn().getTile().grantsExtraTurn()) {
-                    if (game.getPlayerTurnIndex() != 0) {
-                        game.setPlayerTurnIndex(game.getPlayerTurnIndex() - 1);
-                    } else {
-                        game.setPlayerTurnIndex(game.getPlayers().length - 1);
-                    }
-
-                }
                 gui.displayPlayers(game.getPlayerPositions());
                 break;
             case 2 :

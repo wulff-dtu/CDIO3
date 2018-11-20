@@ -24,17 +24,26 @@ public class Game {
         players = new Player[playerNames.length];
         for (int i = 0; i < playerNames.length; i++) {
             players[i] = new Player(playerNames[i]);
+            players[i].getBankroll().changeBalance(20-(players.length*2-4));
         }
+
     }
 
     public void newTurn() {
-        turn = new Turn(players[playerTurnIndex], board, diceCup);
-        if (players[playerTurnIndex].getBankroll().getBalance() >= 3000) {
-            winnerFound = true;
-            winner = players[playerTurnIndex];
-        }
+        turn = new Turn(players[playerTurnIndex], this);
         playerTurnIndex++;
         if (playerTurnIndex == players.length) playerTurnIndex = 0;
+    }
+
+    public void calculateWinner() {
+        int maxBalance = 0;
+        for (int i = 0; i < players.length; i++) {
+            if (players[i].getBankroll().getBalance() > maxBalance){
+                maxBalance = players[i].getBankroll().getBalance();
+                winner = players[i];
+            }
+        }
+        winnerFound = true;
     }
 
     private void shufflePlayerIndex(int times) {

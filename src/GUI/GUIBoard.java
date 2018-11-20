@@ -20,7 +20,7 @@ public class GUIBoard {
                     fields[i] = new GUI_Start("", "", "", Color.red, Color.white);
                     break;
                 case "street":
-                    fields[i] = new GUI_Street("", "", "", Integer.toString(tiles[i].getEffectOnBalance()), Color.darkGray, Color.white);
+                    fields[i] = new GUI_Street("", "", "", Integer.toString(tiles[i].getPrice()), Color.darkGray, Color.white);
                     break;
                 case "chance":
                     fields[i] = new GUI_Chance("", "", "", Color.white, Color.black);
@@ -46,7 +46,7 @@ public class GUIBoard {
     public void setFieldsData(Language language) {
         for (int i = 0; i < tiles.length; i++) {
             fields[i].setTitle(language.getString(tiles[i].getTitle()));
-            fields[i].setSubText(language.getString(tiles[i].getSubtext()) + tiles[i].effectToString());
+            fields[i].setSubText(language.getString(tiles[i].getSubtext()) + tiles[i].priceToString());
             fields[i].setDescription(language.getString(tiles[i].getDescription()));
             switch (tiles[i].getGroup()) {
                 case 1:
