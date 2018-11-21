@@ -221,7 +221,7 @@ board_gotojail_description
 placeholder
 
 rules
-Spillerne slår på skift med 2 terninger og lander på et felt med numrene fra 2 - 12. At lande på hvert af disse felter har en positiv eller negativ effekt på spillernes pengebeholdning. Spillerne begynder spillet med en pengebeholdning på 1000. En spiller vinder spillet ved at nå 3000.
+En til fire spillere får tildelt en brik på spillepladen. Efter tur slår de med en terning og rykker så mange felter frem på brættet, som terningen viser. En del af felterne er grunde, der kan købes, hvis ingen spiller ejer dem i forvejen. De resterende felter sker der ikke noget ved at man lander på i denne version af spillet. Hvis ingen ejer grunden, køber spilleren den, hvis han har råd. Hvis ikke, spilleren har råd, taber han spillet, og den spiller, der har flest penge, vinder. Hvis en anden ejer grunden, betaler spilleren husleje til ejeren, hvis han har råd. Hvis han ikke har råd, taber han spillet, og den spiller, der har flest penge, vinder. Hver gang en spiller passerer start, får han 2 penge. Hvis to personer spiller spillet, starter de hver med 20 penge. Hvis tre personer spiller spillet, starter hver spiller med 18 penge. Hvis fire personer spiller spillet, starter hver spiller med 16 penge.
 
 change_language_header
 Vælg sprog:
