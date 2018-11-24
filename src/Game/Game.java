@@ -5,10 +5,7 @@ public class Game {
     private Player[] players;
     private Board board;
     private DiceCup diceCup;
-    private Turn turn;
-    private int playerTurnIndex;
-    private boolean winnerFound;
-    private Player winner;
+    private Player winner; //todo: skal den måske fjernes?
 
     public Game(String[] playerNames) {
         addPlayers(playerNames);
@@ -26,7 +23,6 @@ public class Game {
             players[i] = new Player(playerNames[i]);
             players[i].getBankroll().changeBalance(20-(players.length*2-4));
         }
-
     }
 
     public void newTurn() {
@@ -111,5 +107,13 @@ public class Game {
             names[i] = players[i].getBankroll().getBalance();
         }
         return names;
+    }
+
+    public String[][] getBoardAsStringArr() {
+        return board.toStringArr();
+    }
+
+    public int[] getDiceValues() {
+        return diceCup.getValueArray();
     }
 }

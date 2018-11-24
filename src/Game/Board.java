@@ -38,4 +38,13 @@ public class Board {
     public Tile[] getTiles() {
         return tiles;
     }
+
+    public String[][] toStringArr() {
+        String[][] arr = new String[tiles.length][];
+        for (int i = 0; i < tiles.length; i++) {
+            arr[i] = tiles[i].toStringArr();
+        }
+        return arr;
+    }
+
 }

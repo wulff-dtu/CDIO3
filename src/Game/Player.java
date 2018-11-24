@@ -26,7 +26,8 @@ public class Player {
 
     public void changePosition(int change) {
         position += change;
-        if (position > 23) position = 0;
+        if (position > 23) position -= 24;
+        if (position < 0) position += 24;
     }
 }
 

@@ -55,4 +55,9 @@ public class Tile {
             return "" + price;
         }
     }
+
+    public String[] toStringArr() {
+        String[] arr = {type, ""+group, title, subtext, description, ""+price, ""+ownerIndex};
+        return arr;
+    }
 }
