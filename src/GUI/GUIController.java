@@ -3,22 +3,19 @@ package GUI;
 import gui_fields.GUI_Field;
 import gui_fields.GUI_Player;
 import gui_main.GUI;
-import Game.Board;
 
 import java.awt.*;
 
 public class GUIController {
 
     private GUI gui;
-    private Board board;
     private GUI_Player[] gui_players;
     private GUIBoard GUIboard;
     private Language language;
 
-    public GUIController(Board board) {
-        this.board = board;
+    public GUIController(String[] boardTypes, String[] boardTitles, int[] boardGroups, String[] prices) {
         language = new Language("english");
-        GUIboard = new GUIBoard(language, board);
+        GUIboard = new GUIBoard(language, boardTypes, boardTitles, boardGroups, prices);
         gui = new GUI(GUIboard.getFields(), new Color(55, 89, 50));
 
     }
@@ -138,5 +135,13 @@ public class GUIController {
         for (GUI_Field field : fields) {
             field.removeAllCars();
         }
+    }
+
+    public void displayPurchase(String playerName, String tileName, int price) {
+        gui.showMessage(playerName + " " + language.getString("player_action_buy1") + " " + language.getString(tileName) + " " + language.getString("player_action_buy2") + " " + price + ",-");
+    }
+
+    public void displayRentPaid(String playerName, String ownerName, String tileName, int rent) {
+        gui.showMessage(language.getString(tileName) + " " + language.getString("player_action_payrent1") + " " + ownerName + ". " + playerName + " " + language.getString("player_action_payrent2") + " " + rent + ",- " + language.getString("player_action_payrent3") + " " + ownerName);
     }
 }

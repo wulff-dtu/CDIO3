@@ -18,10 +18,6 @@ public class DiceCup {
         dice = newDice;
     }
 
-    public void removeAllDice() {
-        dice = new Die[0];
-    }
-
     public void throwDice() {
         int accumlatedSum = 0;
         for (Die die : dice) {
@@ -33,10 +29,6 @@ public class DiceCup {
 
     public int getSum() {
         return sum;
-    }
-
-    public Die[] getDice() {
-        return dice;
     }
 
     public int[] getValueArray() {

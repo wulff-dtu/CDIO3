@@ -1,26 +1,31 @@
 package GUI;
 
 import gui_fields.*;
-import Game.Tile;
-import Game.Board;
 import java.awt.*;
 
 public class GUIBoard {
 
     private GUI_Field[] fields;
-    private Tile[] tiles;
+    private String[] boardTypes;
+    private String[] boardTitles;
+    private int[] boardGroups;
+    private String[] boardPrices;
 
-    public GUIBoard(Language language, Board board) {
-        this.tiles = board.getTiles();
-        Tile[] tiles = board.getTiles();
+
+    public GUIBoard(Language language, String[] boardTypes, String[] boardTitles, int[] boardGroups, String[] boardPrices) { ;
+        this.boardTypes = boardTypes;
+        this.boardTitles = boardTitles;
+        this.boardGroups = boardGroups;
+        this.boardPrices = boardPrices;
+
         fields = new GUI_Field[24];
-        for (int i = 0; i < tiles.length; i++) {
-            switch(tiles[i].getType()) {
+        for (int i = 0; i < boardTypes.length; i++) {
+            switch(boardTypes[i]) {
                 case "start":
                     fields[i] = new GUI_Start("", "", "", Color.red, Color.white);
                     break;
-                case "street":
-                    fields[i] = new GUI_Street("", "", "", Integer.toString(tiles[i].getPrice()), Color.darkGray, Color.white);
+                case "ownable":
+                    fields[i] = new GUI_Street("", "", "", boardPrices[i], Color.darkGray, Color.white);
                     break;
                 case "chance":
                     fields[i] = new GUI_Chance("", "", "", Color.white, Color.black);
@@ -43,12 +48,36 @@ public class GUIBoard {
         return fields;
     }
 
-    public void setFieldsData(Language language) {
-        for (int i = 0; i < tiles.length; i++) {
-            fields[i].setTitle(language.getString(tiles[i].getTitle()));
-            fields[i].setSubText(language.getString(tiles[i].getSubtext()) + tiles[i].priceToString());
-            fields[i].setDescription(language.getString(tiles[i].getDescription()));
-            switch (tiles[i].getGroup()) {
+    public void setFieldTexts(Language language) {
+        for (int i = 0; i < boardTitles.length; i++) {
+            fields[i].setTitle(language.getString(boardTitles[i]));
+            switch (boardTypes[i]) {
+                case "start":
+                    fields[i].setSubText(language.getString("board_start_subtext"));
+                    fields[i].setDescription(language.getString("board_start_description"));
+                    break;
+                case "ownable":
+                    fields[i].setSubText(language.getString("board_ownable_subtext") + " " + boardPrices + ",-");
+                    fields[i].setDescription(language.getString("board_ownable_subtext") + " " + boardPrices + ",-");
+                    break;
+                case "chance":
+                    fields[i] = new GUI_Chance("", "", "", Color.white, Color.black);
+                    break;
+                case "jail":
+                    fields[i] = new GUI_Jail("default", "", "", "", Color.white, Color.black);
+                    break;
+                case "gotojail":
+                    fields[i] = new GUI_Jail("default", "", "", "", Color.white, Color.black);
+                    break;
+                case "refuge":
+                    fields[i] = new GUI_Refuge("default", "", "", "", Color.white, Color.black);
+            }
+        }
+    }
+
+    public void setGroupColors() {
+        for (int i = 0; i < boardGroups.length; i++) {
+            switch (boardGroups[i]) {
                 case 1:
                     fields[i].setBackGroundColor(new Color(127,120,79));
                     break;
