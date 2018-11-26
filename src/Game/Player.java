@@ -24,10 +24,8 @@ public class Player {
         return position;
     }
 
-    public void changePosition(int change) {
-        position += change;
-        if (position > 23) position -= 24;
-        if (position < 0) position += 24;
+    public void setPosition(int position) {
+        this.position = position;
     }
 }
 

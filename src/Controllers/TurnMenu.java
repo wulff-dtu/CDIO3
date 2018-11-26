@@ -5,25 +5,29 @@ import Game.Game;
 
 public class TurnMenu {
 
+    private GUIController gui;
+    private Game game;
     private String playerName;
     private int turnIndex;
     private boolean continueGame;
 
     public TurnMenu(GUIController gui, Game game, int turnIndex) {
+        this.gui = gui;
+        this.game = game;
         this.turnIndex = turnIndex;
         playerName = game.getPlayerNames()[turnIndex];
         continueGame = true;
-        turnMenu(gui, game);
+        turnMenu();
     }
 
-    private void turnMenu(GUIController gui, Game game) {
+    private void turnMenu() {
         int input = gui.turnMenu(playerName);
         switch (input) {
             case 1 :
-                throwDice(gui, game);
+                throwDice();
                 break;
             case 2 :
-                showScore(gui, game);
+                showScore();
                 break;
             case 3 :
                 quitGame();
@@ -31,18 +35,19 @@ public class TurnMenu {
         }
     }
 
-    private void throwDice(GUIController gui, Game game) {
-        Turn turn = new Turn(game, turnIndex);
+    private void throwDice() {
+        new Turn(game, turnIndex);
         gui.displayDice(game.getDiceValues());
         //gui.displayTurnMessage();
         gui.displayPlayers(game.getPlayerPositions());
     }
 
     private void showScore() {
-
+        gui.displayScore(game.getPlayerNames(), game.getPlayerBalances());
+        turnMenu();
     }
 
-    private void quitGame(GUIController gui) {
+    private void quitGame() {
         gui.removeAllPlayers();
         continueGame = false;
     }

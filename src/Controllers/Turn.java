@@ -4,16 +4,15 @@ import Game.Game;
 
 public class Turn {
 
-    int playerIndex;
-    int startingPosition;
-    int calculatedNewPosition;
-    int actualNewPosition;
+    private int playerIndex, startingPosition, calculatedNewPosition, actualNewPosition;
+    private Game game;
 
     public Turn(Game game, int turnIndex) {
+        this.game = game;
         playerIndex = turnIndex;
-        movePlayer(game);
-        checkStartPassed(game);
-        runEffectOfNewPosition(game);
+        movePlayer();
+        checkStartPassed();
+        runEffectOfNewPosition();
     }
 
     /**
@@ -21,13 +20,12 @@ public class Turn {
      * Then throws the dice and returns the sum.
      * Then calculates the new position of the player.
      * Then sets the player at the new position.
-     * @param game
      */
-    private void movePlayer(Game game) {
+    private void movePlayer() {
         startingPosition = game.getPlayerPositions()[playerIndex];
         int diceThrow = game.throwDice();
         calculatedNewPosition = startingPosition + diceThrow;
-        actualNewPosition = calculatedNewPosition % game.getBoardSize();
+        actualNewPosition = calculatedNewPosition % game.getBoardLength();
         game.setPlayerPosition(playerIndex, actualNewPosition);
     }
 
@@ -37,29 +35,27 @@ public class Turn {
      * Since the start tile is supposed to always be at index 0 of the board, we can
      * check if the player has passed or landed on start by checking
      * if calculatedPosition is larger than the length of the board.
-     * @param game
      */
-    private void checkStartPassed(Game game) {
+    private void checkStartPassed() {
         if (calculatedNewPosition > game.getBoardLength()) {
-            game.changePlayerBalance(playerIndex, game.getStartEffect);
+            game.changePlayerBalance(playerIndex, game.getStartEffect());
         }
     }
 
     /**
      * Calls the game to find out what type of tile, the player has landed on.
      * Then calls the corresponding method to run the effects of the tile.
-     * @param game
      */
-    private void runEffectOfNewPosition(Game game) {
+    private void runEffectOfNewPosition() {
         switch (game.getTileType(actualNewPosition)) {
-            case "ownable":
-                onOwnable(game);
+            case "Tile_Ownable":
+                onOwnable();
                 break;
-            case "chance":
-                onChance(game);
+            case "Tile_Chance":
+                onChance();
                 break;
-            case "gotojail":
-                onGoToJail(game);
+            case "Tile_Jail":
+                onGoToJail();
                 break;
         }
     }
@@ -70,43 +66,51 @@ public class Turn {
      * if ownable is owned by anyone (-1 indicates that no one owns it).
      * If not, they player is forced to buy it. If it's already owned,
      * the player pays rent to the owner.
-     * @param game
      */
-    private void onOwnable(Game game) {
-        int priceOrRent = game.getPrice(actualNewPosition);
+    private void onOwnable() {
+        int priceAndRent = game.getPriceAndRent(actualNewPosition);
         int ownerIndex = game.getOwnerIndex(actualNewPosition);
 
-        if (canAfford(game, priceOrRent)) {
+        if (canAfford(priceAndRent)) {
             if (ownerIndex == -1) {
-                buyOwnable(playerIndex, priceOrRent);
+                buyOwnable(playerIndex, priceAndRent);
             } else {
-                payRent(ownerIndex, priceOrRent);
+                payRent(ownerIndex, priceAndRent);
             }
         } else {
             endGame();
         }
     }
 
-    private void onChance(Game game) {
-
+    private void onChance() {
+        //Chance chance = new Chance(game, playerIndex);
     }
 
-    private void onGoToJail(Game game) {
+    private void onGoToJail() {
 
     }
 
     /**
-     * Checks if the player can afford something with certain price.
-     * @param game
+     * Checks if the player can afford something.
      * @param price
      * @return
      */
-    private boolean canAfford(Game game, int price) {
+    private boolean canAfford(int price) {
         return game.getPlayerBalances()[playerIndex] > price;
     }
 
+    private void buyOwnable(int playerIndex, int price) {
+        game.changePlayerBalance(playerIndex, -price);
+        game.setOwnerIndex(actualNewPosition, playerIndex);
+    }
 
+    private void payRent(int playerIndex, int rent) {
+        game.changePlayerBalance(playerIndex, -rent);
+    }
 
+    private void endGame() {
+
+    }
 
 
 }
