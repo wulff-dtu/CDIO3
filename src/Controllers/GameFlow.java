@@ -9,6 +9,10 @@ public class GameFlow {
     private int numOfPlayers, turnIndex;
     private boolean gameRunning;
 
+    public GameFlow(GUIController gui) {
+        newGame(gui);
+    }
+
     /**
      * Initializes a game and the runs it.
      * @param gui

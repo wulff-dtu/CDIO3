@@ -48,13 +48,13 @@ public class Turn {
      */
     private void runEffectOfNewPosition() {
         switch (game.getTileType(actualNewPosition)) {
-            case "Tile_Ownable":
+            case "street":
                 onOwnable();
                 break;
-            case "Tile_Chance":
+            case "chance":
                 onChance();
                 break;
-            case "Tile_Jail":
+            case "gotojail":
                 onGoToJail();
                 break;
         }

@@ -24,7 +24,7 @@ public class GUIBoard {
                 case "start":
                     fields[i] = new GUI_Start("", "", "", Color.red, Color.white);
                     break;
-                case "ownable":
+                case "street":
                     fields[i] = new GUI_Street("", "", "", boardPrices[i], Color.darkGray, Color.white);
                     break;
                 case "chance":
@@ -41,7 +41,8 @@ public class GUIBoard {
 
             }
         }
-        setFieldsData(language);
+        setFieldTexts(language);
+        setGroupColors();
     }
 
     public GUI_Field[] getFields() {
@@ -56,21 +57,26 @@ public class GUIBoard {
                     fields[i].setSubText(language.getString("board_start_subtext"));
                     fields[i].setDescription(language.getString("board_start_description"));
                     break;
-                case "ownable":
-                    fields[i].setSubText(language.getString("board_ownable_subtext") + " " + boardPrices + ",-");
-                    fields[i].setDescription(language.getString("board_ownable_subtext") + " " + boardPrices + ",-");
+                case "street":
+                    fields[i].setSubText(boardPrices[i] + ",-");
+                    fields[i].setDescription(language.getString("board_ownable_description"));
                     break;
                 case "chance":
-                    fields[i] = new GUI_Chance("", "", "", Color.white, Color.black);
+                    fields[i].setSubText(language.getString("board_chance_subtext"));
+                    fields[i].setDescription(language.getString("board_chance_description"));
                     break;
                 case "jail":
-                    fields[i] = new GUI_Jail("default", "", "", "", Color.white, Color.black);
+                    fields[i].setSubText(language.getString("board_jailonvisit_subtext"));
+                    fields[i].setDescription(language.getString("board_jailonvisit_description"));
                     break;
                 case "gotojail":
-                    fields[i] = new GUI_Jail("default", "", "", "", Color.white, Color.black);
+                    fields[i].setSubText(language.getString("board_gotojail_subtext"));
+                    fields[i].setDescription(language.getString("board_gotojail_description"));
                     break;
                 case "refuge":
-                    fields[i] = new GUI_Refuge("default", "", "", "", Color.white, Color.black);
+                    fields[i].setSubText(language.getString("board_freeparking_subtext"));
+                    fields[i].setDescription(language.getString("board_freeparking_description"));
+                    break;
             }
         }
     }

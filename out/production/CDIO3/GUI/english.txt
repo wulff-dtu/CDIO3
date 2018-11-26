@@ -34,173 +34,60 @@ you won the Game!
 board_burgerbar_title
 Burger bar
 
-board_burgerbar_subtext
-Price:
-
-board_burgerbar_description
-placeholder
 
 board_pizzaria_title
 Pizzaria
 
-board_pizzaria_subtext
-Price:
-
-board_pizzaria_description
-placeholder
-
 board_candystore_title
 Candy shop
-
-board_candystore_subtext
-Price:
-
-board_candystore_description
-placeholder
 
 board_icecream_title
 Ice cream shop
 
-board_icecream_subtext
-Price:
-
-board_icecream_description
-placeholder
-
 board_museum_title
 Museum
-
-board_museum_subtext
-Price:
-
-board_museum_description
-placeholder
 
 board_library_title
 Library
 
-board_library_subtext
-Price:
-
-board_library_description
-placeholder
-
-board_skatepark_title
-Skate park
-
-board_skatepark_subtext
-Price:
-
-board_skatepark_description
-placeholder
-
-board_swimmingpool_title
-Swimming pool
-
-board_swimmingpool_subtext
-Price:
-
-board_swimmingpool_description
-placeholder
-
 board_gamearcade_title
 Game arcade
-
-board_gamearcade_subtext
-Price:
-
-board_gamearcade_description
-placeholder
 
 board_cinema_title
 Cinema
 
-board_cinema_subtext
-Price:
-
-board_cinema_description
-placeholder
-
 board_toystore_title
 Toy store
-
-board_toystore_subtext
-Price:
-
-board_toystore_description
-placeholder
 
 board_petshop_title
 Pet shop
 
-board_petshop_subtext
-Price:
+board_skatepark_title
+Skate park
 
-board_petshop_description
-placeholder
+board_swimmingpool_title
+Swimming pool
 
 board_bowlinghall_title
 Bowling hall
 
-board_bowlinghall_subtext
-Price:
-
-board_bowlinghall_description
-placeholder
-
 board_zoo_title
 Zoo
-
-board_zoo_subtext
-Price:
-
-board_zoo_description
-placeholder
 
 board_waterpark_title
 Water park
 
-board_waterpark_subtext
-Price:
-
-board_waterpark_description
-placeholder
-
 board_seafront_title
 Seafront
-
-board_seafront_subtext
-Price:
-
-board_seafront_description
-placeholder
 
 board_start_title
 Start
 
-board_start_subtext
-Receive:
-
-board_start_description
-placeholder
-
 board_chance_title
 Chance
 
-board_chance_subtext
-
-
-board_chance_description
-placeholder
-
 board_jailonvisit_title
 On visit
-
-board_jailonvisit_subtext
-On visit
-
-board_jailonvisit_description
-placeholder
 
 board_freeparking_title
 Free parking
@@ -209,16 +96,34 @@ board_freeparking_subtext
 Free parking
 
 board_freeparking_description
-placeholder
+Free parking
 
 board_gotojail_title
 Go to jail
+
+board_ownable_subtext
+
+board_ownable_description
+
+board_start_subtext
+Receive:
+
+board_start_description
+
+board_jailonvisit_subtext
+On visit
+
+board_jailonvisit_description
 
 board_gotojail_subtext
 Go to jail
 
 board_gotojail_description
-placeholder
+
+board_chance_subtext
+Chance
+
+board_chance_description
 
 rules
 The game is played by two to four players. Each player gets a piece to move on the board. In turns, the players cast the die and move forward as many tiles as the number the die shows. Some of the tiles are plots that can be bought if no player owns them already. The rest of the tiles have no real function in this version of the game. If no one owns the plot and the player has enough money, he buys the plot. If the player don’t have enough money, he loses the game, and the player with the most money in the bank wins. If somebody else owns the plot, the player pays rent to the owner if he can afford it. If he can’t afford it, he loses the game, and the player with the most money in the bank wins. Every time a player passes the start tile, he gets 2 money. If two players play the game, each player starts with a bankroll of 20 money. If three players play the game, each player starts with a bankroll of 18 money. If four people play the game, each player starts with a bankroll of 16 money.
@@ -240,3 +145,18 @@ Please choose number of players:
 
 main_start_writeplayername
 Please enter the name of player
+
+player_action_buy1
+buys
+
+player_action_buy2
+for
+
+player_action_payrent1
+is owned by
+
+player_action_payrent2
+pays
+
+player_action_payrent3
+in rent to

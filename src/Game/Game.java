@@ -45,7 +45,7 @@ public class Game {
     }
 
     public int getPriceAndRent(int i) {
-        return board.getTiles()[i].getEffectOnBalance();
+        return board.getTiles()[i].getPrice();
     }
 
     public int getOwnerIndex(int i) {
@@ -57,7 +57,7 @@ public class Game {
     }
 
     public int getStartEffect() {
-        return board.getTiles()[0].getEffectOnBalance();
+        return board.getTiles()[0].getPrice();
     }
 
     public String getTileType(int i) {

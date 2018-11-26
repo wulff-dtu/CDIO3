@@ -102,7 +102,7 @@ public class GUIController {
         } else if (input.equals(option2)) {
             language.changeLanguage("danish");
         }
-        GUIboard.setFieldsData(language);
+        GUIboard.setFieldTexts(language);
     }
 
     public void displayDice(int[] dice) {
