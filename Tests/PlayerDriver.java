@@ -1,5 +1,3 @@
-package Tests;
-
 import Game.Bankroll;
 
 public class PlayerDriver {

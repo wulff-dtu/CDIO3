@@ -1,5 +1,3 @@
-package Tests;
-
 import Game.Bankroll;
 import org.junit.jupiter.api.Test;
 
