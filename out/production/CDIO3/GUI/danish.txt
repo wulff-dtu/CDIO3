@@ -166,3 +166,15 @@ betaler
 
 player_action_payrent3
 i leje til
+
+player_action_pickChance
+landede på chancen, og skal trække et chancekort!
+
+player_action_visitJail
+er på besøg i fængslet.
+
+player_action_goToJail
+bliver arresteret og sat i fængsel!
+
+player_action_bankruptcy
+har ikke råd til at betale og er derfor gået fallit. \n Vinderen vil nu blive annonceret...

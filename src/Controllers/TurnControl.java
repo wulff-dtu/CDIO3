@@ -74,6 +74,7 @@ public class TurnControl {
                 break;
             case "jailOnVisit" :
                 gui.displayVisitJail(playerName);
+                break;
             case "gotojail" :
                 gui.displayGoToJail(playerName);
                 break;

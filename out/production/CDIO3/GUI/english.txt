@@ -169,3 +169,12 @@ in rent to
 
 player_action_pickChance
 landed on "chance" and gets to pick a chance card!
+
+player_action_visitJail
+is on visit in the jail.
+
+player_action_goToJail
+is arrested an put in jail!
+
+player_action_bankruptcy
+can not afford to pay the price or rent and is then bankrupt! \n The winner will now be announced...
