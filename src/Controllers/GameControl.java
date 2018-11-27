@@ -72,4 +72,8 @@ public class GameControl {
         return (int)(Math.random() * x);
     }
 
+    private void calculateWinner(Game game) {
+
+    }
+
 }

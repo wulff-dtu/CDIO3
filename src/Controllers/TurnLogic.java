@@ -84,7 +84,7 @@ public class TurnLogic {
                 payRent(playerIndex, ownerIndex, priceAndRent);
             }
         } else {
-            endGame();
+            goBankrupt();
         }
     }
 
@@ -118,7 +118,7 @@ public class TurnLogic {
         outCome = "paidRent";
     }
 
-    private void endGame() {
+    private void goBankrupt() {
         outCome = "bankrupt";
     }
 
