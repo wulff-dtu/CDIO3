@@ -104,6 +104,7 @@ Go to jail
 board_ownable_subtext
 
 board_ownable_description
+Owned by:
 
 board_start_subtext
 Receive:

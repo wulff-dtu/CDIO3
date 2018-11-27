@@ -16,7 +16,6 @@ public class TurnLogic {
         movePlayer();
         checkStartPassed();
         runEffectOfNewPosition();
-
     }
 
     /**

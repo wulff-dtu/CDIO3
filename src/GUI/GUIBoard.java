@@ -26,6 +26,7 @@ public class GUIBoard {
                     break;
                 case "street":
                     fields[i] = new GUI_Street("", "", "", boardPrices[i], Color.darkGray, Color.white);
+                    setStreetColor(i);
                     break;
                 case "chance":
                     fields[i] = new GUI_Chance("", "", "", Color.white, Color.black);
@@ -42,7 +43,6 @@ public class GUIBoard {
             }
         }
         setFieldTexts(language);
-        setGroupColors();
     }
 
     public GUI_Field[] getFields() {
@@ -62,8 +62,8 @@ public class GUIBoard {
                     fields[i].setDescription(language.getString("board_ownable_description"));
                     break;
                 case "chance":
-                    fields[i].setSubText(language.getString("board_chance_subtext"));
-                    fields[i].setDescription(language.getString("board_chance_description"));
+                    //fields[i].setSubText(language.getString("board_chance_subtext"));
+                    //fields[i].setDescription(language.getString("board_chance_description"));
                     break;
                 case "jail":
                     fields[i].setSubText(language.getString("board_jailonvisit_subtext"));
@@ -81,37 +81,39 @@ public class GUIBoard {
         }
     }
 
-    public void setGroupColors() {
-        for (int i = 0; i < boardGroups.length; i++) {
-            switch (boardGroups[i]) {
-                case 1:
-                    fields[i].setBackGroundColor(new Color(127,120,79));
-                    break;
-                case 2:
-                    fields[i].setBackGroundColor(new Color(180,209,209));
-                    fields[i].setForeGroundColor(Color.black);
-                    break;
-                case 3:
-                    fields[i].setBackGroundColor(new Color(179,124,135));
-                    break;
-                case 4:
-                    fields[i].setBackGroundColor(new Color(255,251,171));
-                    fields[i].setForeGroundColor(Color.black);
-                    break;
-                case 5:
-                    fields[i].setBackGroundColor(new Color(180,209,209));
-                    fields[i].setForeGroundColor(Color.black);
-                    break;
-                case 6:
-                    fields[i].setBackGroundColor(new Color(0,131,96));
-                    break;
-                case 7:
-                    fields[i].setBackGroundColor(new Color(15,75,116));
-                    break;
-                case 8:
-                    fields[i].setBackGroundColor(new Color(38, 38, 39));
-                    break;
-            }
+    public void setOwnership(Language language, String playerName, int i) {
+        fields[i].setDescription(language.getString("board_ownable_description") + " " + playerName);
+    }
+
+    private void setStreetColor(int i) {
+        switch (boardGroups[i]) {
+            case 1:
+                fields[i].setBackGroundColor(new Color(127,120,79));
+                break;
+            case 2:
+                fields[i].setBackGroundColor(new Color(180,209,209));
+                fields[i].setForeGroundColor(Color.black);
+                break;
+            case 3:
+                fields[i].setBackGroundColor(new Color(179,124,135));
+                break;
+            case 4:
+                fields[i].setBackGroundColor(new Color(255,251,171));
+                fields[i].setForeGroundColor(Color.black);
+                break;
+            case 5:
+                fields[i].setBackGroundColor(new Color(180,209,209));
+                fields[i].setForeGroundColor(Color.black);
+                break;
+            case 6:
+                fields[i].setBackGroundColor(new Color(0,131,96));
+                break;
+            case 7:
+                fields[i].setBackGroundColor(new Color(15,75,116));
+                break;
+            case 8:
+                fields[i].setBackGroundColor(new Color(38, 38, 39));
+                break;
         }
     }
 }

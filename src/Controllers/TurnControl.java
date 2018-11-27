@@ -64,6 +64,7 @@ public class TurnControl {
         switch (turnLogic.getOutCome()) {
             case "boughtOwnable" :
                 gui.displayPurchase(playerName, game.getTileTitle(turnLogic.getActualNewPosition()), turnLogic.getPriceAndRent());
+                gui.setOwnership(playerName, turnLogic.getActualNewPosition());
                 break;
             case "paidRent" :
                 gui.displayRentPaid(playerName, game.getPlayerNames()[turnLogic.getOwnerIndex()], game.getTileTitle(turnLogic.getActualNewPosition()), turnLogic.getPriceAndRent());

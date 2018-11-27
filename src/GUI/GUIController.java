@@ -147,4 +147,8 @@ public class GUIController {
     public void displayStartPassed(String playerName, int startEffect) {
         gui.showMessage(playerName + " " + language.getString("player_action_passStart") + " " + startEffect + ",-");
     }
+
+    public void setOwnership(String playerName, int i) {
+        GUIboard.setOwnership(language, playerName, i);
+    }
 }

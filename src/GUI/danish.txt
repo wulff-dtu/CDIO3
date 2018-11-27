@@ -103,6 +103,7 @@ Gå i fængsel
 board_ownable_subtext
 
 board_ownable_description
+Ejet af:
 
 board_start_subtext
 Modtag:
