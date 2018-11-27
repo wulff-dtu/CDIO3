@@ -5,6 +5,10 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.Scanner;
 
+/**
+ * The constructor defines an array, "stringsID", with the ID's of all strings
+ * that will be searched for in a language file.
+ */
 public class Language {
 
     private File file;
@@ -122,10 +126,6 @@ public class Language {
     public void changeLanguage(String language) {
         file = new File("src/GUI/"+language.toLowerCase()+".txt");
         mapStrings();
-    }
-
-    public Map getMap() {
-        return map;
     }
 
     public String getString(String stringID) {
