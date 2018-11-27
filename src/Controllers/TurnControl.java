@@ -70,13 +70,15 @@ public class TurnControl {
                 gui.displayRentPaid(playerName, game.getPlayerNames()[turnLogic.getOwnerIndex()], game.getTileTitle(turnLogic.getActualNewPosition()), turnLogic.getPriceAndRent());
                 break;
             case "chance" :
-                //gui.displayChance(playerName, turnLogic.getActualNewPosition());
+                gui.displayLandOnChance(playerName);
                 break;
-            case "jail" :
-                //gui.displayGoToJail(playerName, turnLogic.getActualNewPosition());
+            case "jailOnVisit" :
+                gui.displayVisitJail(playerName);
+            case "gotojail" :
+                gui.displayGoToJail(playerName);
                 break;
             case "bankrupt" :
-                //gui.displayBankruptcy(playerName, turnLogic.getActualNewPosition());
+                gui.displayBankruptcy(playerName);
                 break;
             default:
                 break;

@@ -54,7 +54,7 @@ public class GUIBoard {
             fields[i].setTitle(language.getString(boardTitles[i]));
             switch (boardTypes[i]) {
                 case "start":
-                    fields[i].setSubText(language.getString("board_start_subtext"));
+                    fields[i].setSubText(language.getString("board_start_subtext") + " " + boardPrices[0] + ",-");
                     fields[i].setDescription(language.getString("board_start_description"));
                     break;
                 case "street":

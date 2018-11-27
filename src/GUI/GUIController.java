@@ -151,4 +151,20 @@ public class GUIController {
     public void setOwnership(String playerName, int i) {
         GUIboard.setOwnership(language, playerName, i);
     }
+
+    public void displayLandOnChance(String playerName) {
+        gui.showMessage(playerName + " " + language.getString("player_action_pickChance"));
+    }
+
+    public void displayVisitJail(String playerName) {
+        gui.showMessage(playerName + " " + language.getString("player_action_visitJail"));
+    }
+
+    public void displayGoToJail(String playerName) {
+        gui.showMessage(playerName + " " + language.getString("player_action_goToJail"));
+    }
+
+    public void displayBankruptcy(String playerName) {
+        gui.showMessage(playerName + " " + language.getString("player_action_bankruptcy"));
+    }
 }

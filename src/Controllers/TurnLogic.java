@@ -58,6 +58,9 @@ public class TurnLogic {
             case "chance":
                 onChance();
                 break;
+            case "jail" :
+                onJail();
+                break;
             case "gotojail":
                 onGoToJail();
                 break;
@@ -91,6 +94,10 @@ public class TurnLogic {
     private void onChance() {
         //Chance chance = new Chance(game, playerIndex);
         outCome = "chance";
+    }
+
+    private void onJail() {
+        outCome = "jailOnVisit";
     }
 
     private void onGoToJail() {

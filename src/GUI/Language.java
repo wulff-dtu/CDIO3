@@ -68,7 +68,11 @@ public class Language {
         "board_chance_subtext",
         "board_chance_description",
         "board_freeparking_subtext",
-        "board_freeparking_description"
+        "board_freeparking_description",
+        "player_action_pickChance",
+        "player_action_visitJail",
+        "player_action_goToJail",
+        "player_action_bankruptcy"
     };
 
 
