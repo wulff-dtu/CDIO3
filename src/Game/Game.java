@@ -92,6 +92,10 @@ public class Game {
         return diceCup.getValueArray();
     }
 
+    public String getTileTitle(int i) {
+        return board.getTiles()[i].getTitle();
+    }
+
     /*
     public void calculateWinner() {
         int maxBalance = 0;

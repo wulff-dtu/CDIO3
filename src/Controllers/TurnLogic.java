@@ -2,17 +2,21 @@ package Controllers;
 
 import Game.Game;
 
-public class Turn {
+public class TurnLogic {
 
-    private int playerIndex, startingPosition, calculatedNewPosition, actualNewPosition;
+    private int playerIndex, startingPosition, calculatedNewPosition, actualNewPosition, ownerIndex, priceAndRent;
     private Game game;
+    private String outCome;
+    private boolean startPassed;
 
-    public Turn(Game game, int turnIndex) {
+
+    public TurnLogic(Game game, int turnIndex) {
         this.game = game;
         playerIndex = turnIndex;
         movePlayer();
         checkStartPassed();
         runEffectOfNewPosition();
+
     }
 
     /**
@@ -39,6 +43,7 @@ public class Turn {
     private void checkStartPassed() {
         if (calculatedNewPosition > game.getBoardLength()) {
             game.changePlayerBalance(playerIndex, game.getStartEffect());
+            startPassed = true;
         }
     }
 
@@ -68,14 +73,14 @@ public class Turn {
      * the player pays rent to the owner.
      */
     private void onOwnable() {
-        int priceAndRent = game.getPriceAndRent(actualNewPosition);
-        int ownerIndex = game.getOwnerIndex(actualNewPosition);
+        priceAndRent = game.getPriceAndRent(actualNewPosition);
+        ownerIndex = game.getOwnerIndex(actualNewPosition);
 
         if (canAfford(priceAndRent)) {
             if (ownerIndex == -1) {
                 buyOwnable(playerIndex, priceAndRent);
             } else {
-                payRent(ownerIndex, priceAndRent);
+                payRent(playerIndex, ownerIndex, priceAndRent);
             }
         } else {
             endGame();
@@ -84,10 +89,11 @@ public class Turn {
 
     private void onChance() {
         //Chance chance = new Chance(game, playerIndex);
+        outCome = "chance";
     }
 
     private void onGoToJail() {
-
+        outCome = "jail";
     }
 
     /**
@@ -102,15 +108,36 @@ public class Turn {
     private void buyOwnable(int playerIndex, int price) {
         game.changePlayerBalance(playerIndex, -price);
         game.setOwnerIndex(actualNewPosition, playerIndex);
+        outCome = "boughtOwnable";
     }
 
-    private void payRent(int playerIndex, int rent) {
+    private void payRent(int playerIndex, int ownerIndex, int rent) {
         game.changePlayerBalance(playerIndex, -rent);
+        game.changePlayerBalance(ownerIndex, rent);
+        outCome = "paidRent";
     }
 
     private void endGame() {
-
+        outCome = "bankrupt";
     }
 
+    public String getOutCome() {
+        return outCome;
+    }
 
+    public boolean isStartPassed() {
+        return startPassed;
+    }
+
+    public int getOwnerIndex() {
+        return ownerIndex;
+    }
+
+    public int getPriceAndRent() {
+        return priceAndRent;
+    }
+
+    public int getActualNewPosition() {
+        return actualNewPosition;
+    }
 }

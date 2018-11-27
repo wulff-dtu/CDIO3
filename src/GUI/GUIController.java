@@ -17,7 +17,6 @@ public class GUIController {
         language = new Language("english");
         GUIboard = new GUIBoard(language, boardTypes, boardTitles, boardGroups, prices);
         gui = new GUI(GUIboard.getFields(), new Color(55, 89, 50));
-
     }
 
     /**
@@ -70,7 +69,7 @@ public class GUIController {
         return 0;
     }
 
-    public void displayTurnMessage(String message) {
+    public void displayMessage(String message) {
         gui.showMessage(language.getString(message));
     }
 
@@ -137,11 +136,15 @@ public class GUIController {
         }
     }
 
-    public void displayPurchase(String playerName, String tileName, int price) {
-        gui.showMessage(playerName + " " + language.getString("player_action_buy1") + " " + language.getString(tileName) + " " + language.getString("player_action_buy2") + " " + price + ",-");
+    public void displayPurchase(String playerName, String tileTitle, int price) {
+        gui.showMessage(playerName + " " + language.getString("player_action_buy1") + " " + language.getString(tileTitle) + " " + language.getString("player_action_buy2") + " " + price + ",-");
     }
 
     public void displayRentPaid(String playerName, String ownerName, String tileName, int rent) {
         gui.showMessage(language.getString(tileName) + " " + language.getString("player_action_payrent1") + " " + ownerName + ". " + playerName + " " + language.getString("player_action_payrent2") + " " + rent + ",- " + language.getString("player_action_payrent3") + " " + ownerName);
+    }
+
+    public void displayStartPassed(String playerName, int startEffect) {
+        gui.showMessage(playerName + " " + language.getString("player_action_passStart") + " " + startEffect + ",-");
     }
 }

@@ -11,7 +11,7 @@ public class MainControl {
 
     private Board board;
     private GUIController gui;
-    private GameFlow gameFlow;
+    private GameControl gameControl;
 
     /**
      * Constructor. Instantiates a new board and calls the GUI to make a matching board.
@@ -31,7 +31,7 @@ public class MainControl {
     private void mainMenu() {
         switch (gui.mainMenu()) {
             case 1 :
-                gameFlow = new GameFlow(gui);
+                gameControl = new GameControl(gui);
                 break;
             case 2 :
                 gui.displayRules();
