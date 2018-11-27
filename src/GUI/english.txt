@@ -128,7 +128,7 @@ Chance
 
 board_chance_description
 
-rules1
+rules
 The game is played by two to four players. Each player gets a piece to move on the board. In turns, the players cast the die and move forward as many tiles as the number on the die shows. Some of the tiles are plots that can be bought if no player owns them already. The rest of the tiles have no real function in this version of the game. If no one owns the plot and the player has enough money, he buys the plot. If the player don’t have enough money, he loses the game, and the player with the most money in the bank wins. If somebody else owns the plot, the player pays rent to the owner if he can afford it. If he can’t afford it, he loses the game, and the player with the most money in the bank wins. Every time a player passes the start tile, he gets 2 money. If two players play the game, each player starts with a bankroll of 20 money. If three players play the game, each player starts with a bankroll of 18 money. If four people play the game, each player starts with a bankroll of 16 money.
 
 change_language_header
