@@ -10,12 +10,22 @@ public class TurnLogic {
     private boolean startPassed;
 
 
-    public TurnLogic(Game game, int turnIndex) {
+    /**
+     * Calls three functions.
+     * First, it throws the dice and moves the player.
+     * Then it checks if the player has passed or landed on start.
+     * Finally it determines what kind of tile, the player lands on, and gets the corresponding effect.
+     * @param game
+     * @param playerIndex
+     */
+    public TurnLogic(Game game, int playerIndex) {
         this.game = game;
-        playerIndex = turnIndex;
+        this.playerIndex = playerIndex;
+        //checkIfPlayerInJail(); //todo: add jail functionality
         movePlayer();
         checkStartPassed();
         runEffectOfNewPosition();
+
     }
 
     /**
@@ -45,6 +55,20 @@ public class TurnLogic {
             startPassed = true;
         }
     }
+
+    //TODO: add jail functionality
+    /*
+    private void checkIfPlayerInJail() {
+        if (game.isPlayerInJail(playerIndex)) {
+            if (canAfford(1)) {
+                game.changePlayerBalance(playerIndex, -1);
+                game.setPlayerInJail(playerIndex, false);
+            } else {
+                goBankrupt();
+            }
+
+        }
+    }*/
 
     /**
      * Calls the game to find out what type of tile, the player has landed on.
@@ -113,12 +137,23 @@ public class TurnLogic {
         return game.getPlayerBalances()[playerIndex] > price;
     }
 
+    /**
+     * Handles the event where a player buys an ownable.
+     * @param playerIndex
+     * @param price
+     */
     private void buyOwnable(int playerIndex, int price) {
         game.changePlayerBalance(playerIndex, -price);
         game.setOwnerIndex(actualNewPosition, playerIndex);
         outCome = "boughtOwnable";
     }
 
+    /**
+     * Handles the event where a player pays rent to another player.
+     * @param playerIndex
+     * @param ownerIndex
+     * @param rent
+     */
     private void payRent(int playerIndex, int ownerIndex, int rent) {
         game.changePlayerBalance(playerIndex, -rent);
         game.changePlayerBalance(ownerIndex, rent);

@@ -27,6 +27,10 @@ public class Game {
         }
     }
 
+    /**
+     * Wrapper method, that throws the dice in the dicecup and returns the sum.
+     * @return
+     */
     public int throwDice() {
         diceCup.throwDice();
         return diceCup.getSum();
@@ -107,6 +111,14 @@ public class Game {
             }
         }
         return winnerName;
+    }
+
+    public boolean isPlayerInJail(int playerIndex) {
+        return players[playerIndex].isInJail();
+    }
+
+    public void setPlayerInJail(int playerIndex, boolean jail) {
+        players[playerIndex].setInJail(jail);
     }
 }
 

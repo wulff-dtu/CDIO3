@@ -45,6 +45,8 @@ public class GameControl {
      * 2. Checks if a winner is found in that turn, and stops the game if there is.
      * 3. Passes the turn forward (it doesn't matter if the game is stopped).
      * 4. Continues as long as no winner is found.
+     * 5. Displays the winner, af winner is found.
+     * 6. Removes all players from the board.
      */
     private void runGame() {
         gameRunning = true;

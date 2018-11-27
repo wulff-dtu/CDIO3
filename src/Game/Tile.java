@@ -38,11 +38,4 @@ public class Tile {
         return price;
     }
 
-    public String priceToString() {
-        if (price == 0) {
-            return "";
-        } else {
-            return "" + price;
-        }
-    }
 }
