@@ -103,7 +103,10 @@ Go to jail
 
 board_ownable_subtext
 
-board_ownable_description
+board_ownable_forsale
+For sale
+
+board_ownable_ownedby
 Owned by:
 
 board_start_subtext
@@ -146,6 +149,9 @@ Please choose number of players:
 
 main_start_writeplayername
 Please enter the name of player
+
+player_action_passStart
+passed start and receives
 
 player_action_buy1
 buys

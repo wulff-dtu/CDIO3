@@ -59,7 +59,7 @@ public class GUIBoard {
                     break;
                 case "street":
                     fields[i].setSubText(boardPrices[i] + ",-");
-                    fields[i].setDescription(language.getString("board_ownable_description"));
+                    fields[i].setDescription(language.getString("board_ownable_forsale"));
                     break;
                 case "chance":
                     //fields[i].setSubText(language.getString("board_chance_subtext"));
@@ -82,7 +82,7 @@ public class GUIBoard {
     }
 
     public void setOwnership(Language language, String playerName, int i) {
-        fields[i].setDescription(language.getString("board_ownable_description") + " " + playerName);
+        fields[i].setDescription(language.getString("board_ownable_ownedby") + " " + playerName);
     }
 
     private void setStreetColor(int i) {

@@ -59,7 +59,7 @@ public class TurnControl {
         gui.displayDice(game.getDiceValues());
         gui.displayPlayers(game.getPlayerPositions());
         if (turnLogic.isStartPassed()) {
-            //gui.displayStartPassed(playerName, game.getStartEffect());
+            gui.displayStartPassed(playerName, game.getStartEffect());
         }
         switch (turnLogic.getOutCome()) {
             case "boughtOwnable" :
