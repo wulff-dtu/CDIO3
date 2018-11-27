@@ -52,6 +52,7 @@ public class GameControl {
             gameRunning = turn.continueGame();
             passTurnForward();
         } while (gameRunning);
+        gui.removeAllPlayers();
     }
 
     /**
@@ -59,7 +60,7 @@ public class GameControl {
      */
     private void passTurnForward() {
         turnIndex++;
-        if (turnIndex > numOfPlayers) turnIndex = 0;
+        if (turnIndex == numOfPlayers) turnIndex = 0;
     }
 
     /**

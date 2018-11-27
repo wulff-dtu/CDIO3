@@ -140,8 +140,8 @@ public class GUIController {
         gui.showMessage(playerName + " " + language.getString("player_action_buy1") + " " + language.getString(tileTitle) + " " + language.getString("player_action_buy2") + " " + price + ",-");
     }
 
-    public void displayRentPaid(String playerName, String ownerName, String tileName, int rent) {
-        gui.showMessage(language.getString(tileName) + " " + language.getString("player_action_payrent1") + " " + ownerName + ". " + playerName + " " + language.getString("player_action_payrent2") + " " + rent + ",- " + language.getString("player_action_payrent3") + " " + ownerName);
+    public void displayRentPaid(String playerName, String ownerName, String tileTitle, int rent) {
+        gui.showMessage(language.getString(tileTitle) + " " + language.getString("player_action_payrent1") + " " + ownerName + ". " + playerName + " " + language.getString("player_action_payrent2") + " " + rent + ",- " + language.getString("player_action_payrent3") + " " + ownerName);
     }
 
     public void displayStartPassed(String playerName, int startEffect) {

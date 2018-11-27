@@ -59,23 +59,25 @@ public class TurnControl {
         gui.displayDice(game.getDiceValues());
         gui.displayPlayers(game.getPlayerPositions());
         if (turnLogic.isStartPassed()) {
-            gui.displayStartPassed(playerName, game.getStartEffect());
+            //gui.displayStartPassed(playerName, game.getStartEffect());
         }
         switch (turnLogic.getOutCome()) {
             case "boughtOwnable" :
-                gui.displayPurchase(playerName, game.getTileTitle[turnLogic.getActualNewPosition()], turnLogic.getPriceAndRent());
+                gui.displayPurchase(playerName, game.getTileTitle(turnLogic.getActualNewPosition()), turnLogic.getPriceAndRent());
                 break;
             case "paidRent" :
-                gui.displayRentPaid(playerName, game.getPlayerNames()[turnLogic.getOwnerIndex()], turnLogic.getActualNewPosition(), turnLogic.getPriceAndRent());
+                gui.displayRentPaid(playerName, game.getPlayerNames()[turnLogic.getOwnerIndex()], game.getTileTitle(turnLogic.getActualNewPosition()), turnLogic.getPriceAndRent());
                 break;
             case "chance" :
-                gui.displayChance(playerName, turnLogic.getActualNewPosition());
+                //gui.displayChance(playerName, turnLogic.getActualNewPosition());
                 break;
             case "jail" :
-                gui.displayGoToJail(playerName, turnLogic.getActualNewPosition());
+                //gui.displayGoToJail(playerName, turnLogic.getActualNewPosition());
                 break;
             case "bankrupt" :
-                gui.displayBankruptcy(playerName, turnLogic.getActualNewPosition());
+                //gui.displayBankruptcy(playerName, turnLogic.getActualNewPosition());
+                break;
+            default:
                 break;
         }
     }

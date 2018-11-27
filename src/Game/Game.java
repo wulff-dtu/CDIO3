@@ -61,7 +61,7 @@ public class Game {
     }
 
     public String getTileType(int i) {
-        return board.getTiles()[i].getClass().getSimpleName();
+        return board.getTiles()[i].getType();
     }
 
     public int[] getPlayerPositions() {

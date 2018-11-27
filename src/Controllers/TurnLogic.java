@@ -62,6 +62,8 @@ public class TurnLogic {
             case "gotojail":
                 onGoToJail();
                 break;
+            default:
+                outCome = "nothing";
         }
     }
 
