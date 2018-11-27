@@ -86,4 +86,8 @@ public class TurnControl {
     public boolean continueGame() {
         return continueGame;
     }
+
+    public boolean isFindWinner() {
+        return findWinner;
+    }
 }

@@ -96,15 +96,17 @@ public class Game {
         return board.getTiles()[i].getTitle();
     }
 
-    /*
-    public void calculateWinner() {
+    //TODO: Modify this method, so that there may be more than one winner.
+    public String getWinnerName() {
+        String winnerName = "";
         int maxBalance = 0;
         for (int i = 0; i < players.length; i++) {
-            if (players[i].getBankroll().getBalance() > maxBalance){
+            if (players[i].getBankroll().getBalance() >= maxBalance){
                 maxBalance = players[i].getBankroll().getBalance();
-                winner = players[i];
+                winnerName = players[i].getName();
             }
         }
-        winnerFound = true;
-    }*/
+        return winnerName;
+    }
 }
+

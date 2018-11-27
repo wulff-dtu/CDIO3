@@ -6,6 +6,7 @@ import GUI.GUIController;
 public class GameControl {
 
     private Game game;
+    private TurnControl turnControl;
     private GUIController gui;
     private int numOfPlayers, turnIndex;
     private boolean gameRunning;
@@ -48,10 +49,11 @@ public class GameControl {
     private void runGame() {
         gameRunning = true;
         do {
-            TurnControl turn = new TurnControl(gui, game, turnIndex);
-            gameRunning = turn.continueGame();
+            turnControl = new TurnControl(gui, game, turnIndex);
+            gameRunning = turnControl.continueGame();
             passTurnForward();
         } while (gameRunning);
+        if (turnControl.isFindWinner()) gui.displayWinner(game.getWinnerName());
         gui.removeAllPlayers();
     }
 
@@ -70,10 +72,6 @@ public class GameControl {
      */
     private int randomIndex(int x) {
         return (int)(Math.random() * x);
-    }
-
-    private void calculateWinner(Game game) {
-
     }
 
 }
