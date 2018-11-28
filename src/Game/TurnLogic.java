@@ -1,6 +1,4 @@
-package Controllers;
-
-import Game.Game;
+package Game;
 
 public class TurnLogic {
 
@@ -75,7 +73,7 @@ public class TurnLogic {
      */
     private void runEffectOfNewPosition() {
         switch (game.getTileType(actualNewPosition)) {
-            case "street":
+            case "ownable":
                 onOwnable();
                 break;
             case "chance":

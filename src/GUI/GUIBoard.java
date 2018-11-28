@@ -24,9 +24,9 @@ public class GUIBoard {
                 case "start":
                     fields[i] = new GUI_Start("", "", "", Color.red, Color.white);
                     break;
-                case "street":
+                case "ownable":
                     fields[i] = new GUI_Street("", "", "", boardPrices[i], Color.darkGray, Color.white);
-                    setStreetColor(i);
+                    setOwnableColor(i);
                     break;
                 case "chance":
                     fields[i] = new GUI_Chance("", "", "", Color.white, Color.black);
@@ -57,7 +57,7 @@ public class GUIBoard {
                     fields[i].setSubText(language.getString("board_start_subtext") + " " + boardPrices[0] + ",-");
                     fields[i].setDescription(language.getString("board_start_description"));
                     break;
-                case "street":
+                case "ownable":
                     fields[i].setSubText(boardPrices[i] + ",-");
                     fields[i].setDescription(language.getString("board_ownable_forsale"));
                     break;
@@ -85,7 +85,7 @@ public class GUIBoard {
         fields[i].setDescription(language.getString("board_ownable_ownedby") + " " + playerName);
     }
 
-    private void setStreetColor(int i) {
+    private void setOwnableColor(int i) {
         switch (boardGroups[i]) {
             case 1:
                 fields[i].setBackGroundColor(new Color(127,120,79));

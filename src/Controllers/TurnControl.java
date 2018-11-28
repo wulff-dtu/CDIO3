@@ -2,6 +2,7 @@ package Controllers;
 
 import GUI.GUIController;
 import Game.Game;
+import Game.TurnLogic;
 
 public class TurnControl {
 
@@ -16,7 +17,7 @@ public class TurnControl {
      * The constructor sets up the needed attributes.
      * In the end, it calls turnMenu() to display a menu to the player.
      * "continueGame" is used to tell GameControl, that the game is not over yet, so that it will
-     * pass the turn forward. If a player goes bankrupt, continueGame will be set to false.
+     * pass the turn forward.
      * @param gui
      * @param game
      * @param turnIndex turnIndex is assigned to playerIndex, because it is frequently
