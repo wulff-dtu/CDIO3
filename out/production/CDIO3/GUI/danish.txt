@@ -34,194 +34,102 @@ du vandt!
 board_burgerbar_title
 Burgerbaren
 
-board_burgerbar_subtext
-Pris:
-
-board_burgerbar_description
-placeholder
-
 board_pizzaria_title
 Pizzariaet
-
-board_pizzaria_subtext
-Pris:
-
-board_pizzaria_description
-placeholder
 
 board_candystore_title
 Slikbutikken
 
-board_candystore_subtext
-Pris:
-
-board_candystore_description
-placeholder
-
 board_icecream_title
 Iskiosken
-
-board_icecream_subtext
-Pris:
-
-board_icecream_description
-placeholder
 
 board_museum_title
 Museet
 
-board_museum_subtext
-Pris:
-
-board_museum_description
-placeholder
-
 board_library_title
 Biblioteket
-
-board_library_subtext
-Pris:
-
-board_library_description
-placeholder
 
 board_skatepark_title
 Skaterparken
 
-board_skatepark_subtext
-Pris:
-
-board_skatepark_description
-placeholder
-
 board_swimmingpool_title
 Swimming-\npoolen
-
-board_swimmingpool_subtext
-Pris:
-
-board_swimmingpool_description
-placeholder
 
 board_gamearcade_title
 Spillehallen
 
-board_gamearcade_subtext
-Pris:
-
-board_gamearcade_description
-placeholder
-
 board_cinema_title
 Biografen
-
-board_cinema_subtext
-Pris:
-
-board_cinema_description
-placeholder
 
 board_toystore_title
 Legetøjs-\nbutikken
 
-board_toystore_subtext
-Pris:
-
-board_toystore_description
-placeholder
-
 board_petshop_title
 Dyrehandlen
-
-board_petshop_subtext
-Pris:
-
-board_petshop_description
-placeholder
 
 board_bowlinghall_title
 Bowlinghallen
 
-board_bowlinghall_subtext
-Pris:
-
-board_bowlinghall_description
-placeholder
-
 board_zoo_title
 Zoo
-
-board_zoo_subtext
-Pris:
-
-board_zoo_description
-placeholder
 
 board_waterpark_title
 Vand-\nlandet
 
-board_waterpark_subtext
-Pris:
-
-board_waterpark_description
-placeholder
-
 board_seafront_title
 Strand-\npromenaden
-
-board_seafront_subtext
-Pris:
-
-board_seafront_description
-placeholder
 
 board_start_title
 Start
 
-board_start_subtext
-Modtag:
-
-board_start_description
-placeholder
-
 board_chance_title
 Chance
 
-board_chance_subtext
-
-
-board_chance_description
-placeholder
-
 board_jailonvisit_title
 På besøg
-
-board_jailonvisit_subtext
-På besøg
-
-board_jailonvisit_description
-placeholder
 
 board_freeparking_title
 Gratis parkering
 
 board_freeparking_subtext
-Parkering
+Gratis parkering
 
 board_freeparking_description
-placeholder
+Gratis parkering
 
 board_gotojail_title
 Gå i fængsel
+
+board_ownable_subtext
+
+board_ownable_forsale
+Til salg
+
+board_ownable_ownedby
+Ejet af:
+
+board_start_subtext
+Modtag:
+
+board_start_description
+
+board_jailonvisit_subtext
+På besøg
+
+board_jailonvisit_description
 
 board_gotojail_subtext
 Gå i fængsel
 
 board_gotojail_description
-placeholder
+
+board_chance_subtext
+Chance
+
+board_chance_description
 
 rules
-En til fire spillere får tildelt en brik på spillepladen. Efter tur slår de med en terning og rykker så mange felter frem på brættet, som terningen viser. En del af felterne er grunde, der kan købes, hvis ingen spiller ejer dem i forvejen. De resterende felter sker der ikke noget ved at man lander på i denne version af spillet. Hvis ingen ejer grunden, køber spilleren den, hvis han har råd. Hvis ikke, spilleren har råd, taber han spillet, og den spiller, der har flest penge, vinder. Hvis en anden ejer grunden, betaler spilleren husleje til ejeren, hvis han har råd. Hvis han ikke har råd, taber han spillet, og den spiller, der har flest penge, vinder. Hver gang en spiller passerer start, får han 2 penge. Hvis to personer spiller spillet, starter de hver med 20 penge. Hvis tre personer spiller spillet, starter hver spiller med 18 penge. Hvis fire personer spiller spillet, starter hver spiller med 16 penge.
+Spillerne slår på skift med 2 terninger og lander på et felt med numrene fra 2 - 12. At lande på hvert af disse felter har en positiv eller negativ effekt på spillernes pengebeholdning. Spillerne begynder spillet med en pengebeholdning på 1000. En spiller vinder spillet ved at nå 3000.
 
 change_language_header
 Vælg sprog:
@@ -240,3 +148,33 @@ Vælg antal af spillere:
 
 main_start_writeplayername
 Indtast navn på spiller
+
+player_action_passStart
+har passeret start og modtager
+
+player_action_buy1
+køber
+
+player_action_buy2
+for
+
+player_action_payrent1
+er ejet af
+
+player_action_payrent2
+betaler
+
+player_action_payrent3
+i leje til
+
+player_action_pickChance
+landede på chancen, og skal trække et chancekort!
+
+player_action_visitJail
+er på besøg i fængslet.
+
+player_action_goToJail
+bliver arresteret og sat i fængsel!
+
+player_action_bankruptcy
+har ikke råd til at betale og er derfor gået fallit. Vinderen vil nu blive annonceret...

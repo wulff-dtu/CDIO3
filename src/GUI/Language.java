@@ -5,6 +5,10 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.Scanner;
 
+/**
+ * The constructor defines an array, "stringsID", with the ID's of all strings
+ * that will be searched for in a language file.
+ */
 public class Language {
 
     private File file;
@@ -23,75 +27,56 @@ public class Language {
         "end_game_congratulations",
         "end_game_youwon",
         "board_burgerbar_title",
-        "board_burgerbar_subtext",
-        "board_burgerbar_description",
         "board_pizzaria_title",
-        "board_pizzaria_subtext",
-        "board_pizzaria_description",
         "board_candystore_title",
-        "board_candystore_subtext",
-        "board_candystore_description",
         "board_icecream_title",
-        "board_icecream_subtext",
-        "board_icecream_description",
         "board_museum_title",
-        "board_museum_subtext",
-        "board_museum_description",
         "board_library_title",
-        "board_library_subtext",
-        "board_library_description",
         "board_skatepark_title",
-        "board_skatepark_subtext",
-        "board_skatepark_description",
         "board_swimmingpool_title",
-        "board_swimmingpool_subtext",
-        "board_swimmingpool_description",
         "board_gamearcade_title",
-        "board_gamearcade_subtext",
-        "board_gamearcade_description",
         "board_cinema_title",
-        "board_cinema_subtext",
-        "board_cinema_description",
         "board_toystore_title",
-        "board_toystore_subtext",
-        "board_toystore_description",
         "board_petshop_title",
-        "board_petshop_subtext",
-        "board_petshop_description",
         "board_bowlinghall_title",
-        "board_bowlinghall_subtext",
-        "board_bowlinghall_description",
         "board_zoo_title",
-        "board_zoo_subtext",
-        "board_zoo_description",
         "board_waterpark_title",
-        "board_waterpark_subtext",
-        "board_waterpark_description",
         "board_seafront_title",
-        "board_seafront_subtext",
-        "board_seafront_description",
         "board_start_title",
-        "board_start_subtext",
-        "board_start_description",
         "board_chance_title",
-        "board_chance_subtext",
-        "board_chance_description",
         "board_jailonvisit_title",
-        "board_jailonvisit_subtext",
-        "board_jailonvisit_description",
         "board_freeparking_title",
-        "board_freeparking_subtext",
-        "board_freeparking_description",
         "board_gotojail_title",
-        "board_gotojail_subtext",
-        "board_gotojail_description",
         "rules",
         "change_language_header",
         "change_language_english",
         "change_language_danish",
         "invalid_input",
         "main_start_howmanyplayers",
-        "main_start_writeplayername"
+        "main_start_writeplayername",
+        "player_action_passStart",
+        "player_action_buy1",
+        "player_action_buy2",
+        "player_action_payrent1",
+        "player_action_payrent2",
+        "player_action_payrent3",
+        "board_ownable_subtext",
+        "board_ownable_forsale",
+        "board_ownable_ownedby",
+        "board_start_subtext",
+        "board_start_description",
+        "board_jailonvisit_subtext",
+        "board_jailonvisit_description",
+        "board_gotojail_subtext",
+        "board_gotojail_description",
+        "board_chance_subtext",
+        "board_chance_description",
+        "board_freeparking_subtext",
+        "board_freeparking_description",
+        "player_action_pickChance",
+        "player_action_visitJail",
+        "player_action_goToJail",
+        "player_action_bankruptcy"
     };
 
 
@@ -109,7 +94,6 @@ public class Language {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-
 
     }
 
@@ -131,7 +115,7 @@ public class Language {
             }
             scanner.close();
             if(message.equals("StringID: \"" + stringID + "\" not found."))
-                System.err.println("A key-value set does not match!");
+                System.err.println("A key-value set does not match! Key: " + stringID);
         } catch(FileNotFoundException e) {
             System.out.println("File doesn't exist!");
         }
@@ -141,10 +125,6 @@ public class Language {
     public void changeLanguage(String language) {
         file = new File("src/GUI/"+language.toLowerCase()+".txt");
         mapStrings();
-    }
-
-    public Map getMap() {
-        return map;
     }
 
     public String getString(String stringID) {

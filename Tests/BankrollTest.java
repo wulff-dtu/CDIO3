@@ -1,5 +1,3 @@
-package Tests;
-
 import Game.Bankroll;
 import org.junit.jupiter.api.Test;
 
@@ -53,6 +51,10 @@ class BankrollTest {
     @Test
     void Bankroll(){
         PlayerDriver testPlayer = new PlayerDriver();
+
+        assertTrue(testPlayer.getBankroll() != null); //tests if the bankroll attribute is empty or not
+
+        assertTrue(testPlayer.getBankroll() instanceof Bankroll); //tests if the bankroll attribute is a Bankroll object
     }
 
 }

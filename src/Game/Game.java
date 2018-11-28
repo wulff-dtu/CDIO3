@@ -5,88 +5,67 @@ public class Game {
     private Player[] players;
     private Board board;
     private DiceCup diceCup;
-    private Turn turn;
-    private int playerTurnIndex;
-    private boolean winnerFound;
-    private Player winner;
 
     public Game(String[] playerNames) {
         addPlayers(playerNames);
-        shufflePlayerIndex(players.length); //"players.length" is an arbitrary number of times. Could be many more.
-        playerTurnIndex = 0;
         board = new Board();
         diceCup = new DiceCup();
         diceCup.addDie(6);
-        winnerFound = false;
     }
 
+    /**
+     * Adds players to the game from an array of names.
+     * Each player is then initialized with a balance, that is set
+     * depending on the number of players.
+     * @param playerNames
+     */
     private void addPlayers(String[] playerNames) {
         players = new Player[playerNames.length];
         for (int i = 0; i < playerNames.length; i++) {
             players[i] = new Player(playerNames[i]);
             players[i].getBankroll().changeBalance(20-(players.length*2-4));
         }
-
     }
 
-    public void newTurn() {
-        turn = new Turn(players[playerTurnIndex], this);
-        playerTurnIndex++;
-        if (playerTurnIndex == players.length) playerTurnIndex = 0;
+    /**
+     * Wrapper method, that throws the dice in the dicecup and returns the sum.
+     * @return
+     */
+    public int throwDice() {
+        diceCup.throwDice();
+        return diceCup.getSum();
     }
 
-    public void calculateWinner() {
-        int maxBalance = 0;
-        for (int i = 0; i < players.length; i++) {
-            if (players[i].getBankroll().getBalance() > maxBalance){
-                maxBalance = players[i].getBankroll().getBalance();
-                winner = players[i];
-            }
-        }
-        winnerFound = true;
+    public int getBoardLength() {
+        return board.getTiles().length;
     }
 
-    private void shufflePlayerIndex(int times) {
-        for (int i = 0; i < times; i++) {
-            int randomPlayerIndex1 = (int) (Math.random() * players.length);
-            int randomPlayerIndex2 = (int) (Math.random() * players.length);
-            Player randomPlayer1 = players[randomPlayerIndex1];
-            Player randomPlayer2 = players[randomPlayerIndex2];
-            players[randomPlayerIndex2] = randomPlayer1;
-            players[randomPlayerIndex1] = randomPlayer2;
-        }
+    public void setPlayerPosition(int playerIndex, int position) {
+        players[playerIndex].setPosition(position);
     }
 
-    public Player[] getPlayers() {
-        return players;
+    public void changePlayerBalance(int playerIndex, int change) {
+        players[playerIndex].getBankroll().changeBalance(change);
     }
 
-    public boolean isWinnerFound() {
-        return winnerFound;
+    public int getPriceAndRent(int i) {
+        return board.getTiles()[i].getPrice();
     }
 
-    public Turn getTurn() {
-        return turn;
+    public int getOwnerIndex(int i) {
+        return board.getTiles()[i].getOwnerIndex();
     }
 
-    public int getPlayerTurnIndex() {
-        return playerTurnIndex;
+    public void setOwnerIndex(int boardIndex, int playerIndex) {
+        board.getTiles()[boardIndex].setOwnerIndex(playerIndex);
     }
 
-    public void setPlayerTurnIndex(int playerTurnIndex) {
-        this.playerTurnIndex = playerTurnIndex;
+    public int getStartEffect() {
+        return board.getTiles()[0].getPrice();
     }
 
-    public DiceCup getDiceCup() {
-        return diceCup;
-    }
-
-    public Player getWinner() {
-        return winner;
-    }
-
-    public Board getBoard() {
-        return board;
+    public String getTileType(int i) {
+        return board.getTiles()[i].getType();
     }
 
     public int[] getPlayerPositions() {
@@ -112,4 +91,34 @@ public class Game {
         }
         return names;
     }
+
+    public int[] getDiceValues() {
+        return diceCup.getValueArray();
+    }
+
+    public String getTileTitle(int i) {
+        return board.getTiles()[i].getTitle();
+    }
+
+    //TODO: Modify this method, so that there may be more than one winner.
+    public String getWinnerName() {
+        String winnerName = "";
+        int maxBalance = 0;
+        for (int i = 0; i < players.length; i++) {
+            if (players[i].getBankroll().getBalance() >= maxBalance){
+                maxBalance = players[i].getBankroll().getBalance();
+                winnerName = players[i].getName();
+            }
+        }
+        return winnerName;
+    }
+
+    public boolean isPlayerInJail(int playerIndex) {
+        return players[playerIndex].isInJail();
+    }
+
+    public void setPlayerInJail(int playerIndex, boolean jail) {
+        players[playerIndex].setInJail(jail);
+    }
 }
+
