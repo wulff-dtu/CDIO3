@@ -9,23 +9,22 @@ public class TurnLogic {
     private String outCome;
     private boolean startPassed;
 
+    public TurnLogic(Game game, int playerIndex) {
+        this.game = game;
+        this.playerIndex = playerIndex;
+    }
 
     /**
      * Calls three functions.
      * First, it throws the dice and moves the player.
      * Then it checks if the player has passed or landed on start.
      * Finally it determines what kind of tile, the player lands on, and gets the corresponding effect.
-     * @param game
-     * @param playerIndex
      */
-    public TurnLogic(Game game, int playerIndex) {
-        this.game = game;
-        this.playerIndex = playerIndex;
+    public void runTurn() {
         //checkIfPlayerInJail(); //todo: add jail functionality
         movePlayer();
         checkStartPassed();
         runEffectOfNewPosition();
-
     }
 
     /**

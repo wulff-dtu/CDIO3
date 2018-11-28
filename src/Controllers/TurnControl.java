@@ -58,6 +58,7 @@ public class TurnControl {
      */
     private void throwDice() {
         turnLogic = new TurnLogic(game, playerIndex);
+        turnLogic.runTurn();
         displayOutCome();
         if (turnLogic.getOutCome().equals("bankrupt")) {
             findWinner = true;
