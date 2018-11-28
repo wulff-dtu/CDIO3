@@ -1,10 +1,12 @@
 package Game;
 
+import Interfaces.DiceCupInterface;
+
 public class Game {
 
     private Player[] players;
     private Board board;
-    private DiceCup diceCup;
+    private DiceCupInterface diceCup;
 
     public Game(String[] playerNames) {
         addPlayers(playerNames);
@@ -111,6 +113,10 @@ public class Game {
             }
         }
         return winnerName;
+    }
+
+    public void setDiceCup(DiceCupInterface diceCup) {
+        this.diceCup = diceCup;
     }
 
     public boolean isPlayerInJail(int playerIndex) {
