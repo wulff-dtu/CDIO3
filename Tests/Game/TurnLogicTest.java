@@ -104,11 +104,13 @@ class TurnLogicTest {
     }
 
     @Test
-    void testOutcomes() {
+    void testOutcomesAndBoardLength() {
         String[] players = {"player1", "player2"};
         int[] predeterminedDiceValues = {1, 1, 1, 3, 6, 6};
         Game game = setupTestGame(players, predeterminedDiceValues);
         game.setOwnerIndex(2, 1);
+
+        assertEquals(24, game.getBoardLength());
 
         TurnLogic turn = new TurnLogic(game, 0);
         turn.runTurn();

@@ -1,16 +1,14 @@
 package Game;
 
-import Game.Die;
-
 public interface DiceCupInterface {
 
-    public void addDie(int sides);
+    void addDie(int sides);
 
-    public void throwDice();
+    void throwDice();
 
-    public int getSum();
+    int getSum();
 
-    public int[] getValueArray();
+    int[] getValueArray();
 
 }
 
