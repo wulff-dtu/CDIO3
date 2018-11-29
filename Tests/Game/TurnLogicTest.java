@@ -20,10 +20,13 @@ class TurnLogicTest {
         int[] predeterminedDiceValues = {1};
         Game game = setupTestGame(players, predeterminedDiceValues);
 
+        assertEquals(0, game.getOwnerIndex(-1)); //checks that the tile is not owned by anyone.
+
         TurnLogic turn = new TurnLogic(game, 0);
         turn.runTurn();
 
         assertEquals(19, game.getPlayerBalances()[0]); //checks if player 1 has the right balance, if he/she purchased the ownable.
+        assertEquals(20, game.getPlayerBalances()[1]); //checks if player 2's balance is unchanged.
         assertEquals(0, game.getOwnerIndex(1)); //checks if the tile, that player1 landed on (index 1), is owned by player1 (who has index 0).
     }
 

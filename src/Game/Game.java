@@ -119,6 +119,10 @@ public class Game {
         return winner;
     }
 
+    public int getTilePrice(int i) {
+        return board.getTiles()[i].getPrice();
+    }
+
     public void setDiceCup(DiceCupInterface diceCup) {
         this.diceCup = diceCup;
     }
