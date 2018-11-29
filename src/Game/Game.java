@@ -94,6 +94,10 @@ public class Game {
         return names;
     }
 
+    public void setPlayerBalance(int i, int balance) {
+        players[i].getBankroll().setBalance(balance);
+    }
+
     public int[] getDiceValues() {
         return diceCup.getValueArray();
     }

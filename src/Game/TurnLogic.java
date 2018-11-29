@@ -85,6 +85,9 @@ public class TurnLogic {
             case "gotojail":
                 onGoToJail();
                 break;
+            case "refuge":
+                onRefuge();
+                break;
             default:
                 outCome = "nothing";
         }
@@ -122,7 +125,7 @@ public class TurnLogic {
     }
 
     private void onGoToJail() {
-        outCome = "jail";
+        outCome = "gotojail";
     }
 
     /**
@@ -131,7 +134,7 @@ public class TurnLogic {
      * @return
      */
     private boolean canAfford(int price) {
-        return game.getPlayerBalances()[playerIndex] > price;
+        return game.getPlayerBalances()[playerIndex] >= price;
     }
 
     /**
@@ -143,6 +146,10 @@ public class TurnLogic {
         game.changePlayerBalance(playerIndex, -price);
         game.setOwnerIndex(actualNewPosition, playerIndex);
         outCome = "boughtOwnable";
+    }
+
+    private void onRefuge() {
+        outCome = "refuge";
     }
 
     /**

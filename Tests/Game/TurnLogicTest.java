@@ -7,8 +7,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class TurnLogicTest {
 
-    private Game setupTestGame(String[] players, int[] predeterminedValues) {
-        MockDiceCup diceCup = new MockDiceCup(predeterminedValues);
+    private Game setupTestGame(String[] players, int[] predeterminedDiceValues) {
+        MockDiceCup diceCup = new MockDiceCup(predeterminedDiceValues);
         Game game = new Game(players);
         game.setDiceCup(diceCup);
         return game;
@@ -17,8 +17,8 @@ class TurnLogicTest {
     @Test
     void testPurchase() {
         String[] players = {"player1", "player2"};
-        int[] predeterminedValues = {1};
-        Game game = setupTestGame(players, predeterminedValues);
+        int[] predeterminedDiceValues = {1};
+        Game game = setupTestGame(players, predeterminedDiceValues);
 
         TurnLogic turn = new TurnLogic(game, 0);
         turn.runTurn();
@@ -30,8 +30,8 @@ class TurnLogicTest {
     @Test
     void testPayRent() {
         String[] players = {"player1", "player2"};
-        int[] predeterminedValues = {1};
-        Game game = setupTestGame(players, predeterminedValues);
+        int[] predeterminedDiceValues = {1};
+        Game game = setupTestGame(players, predeterminedDiceValues);
 
         game.setOwnerIndex(1, 1); //sets player2 as the owner of the second tile on the board (the burger bar).
 
@@ -45,8 +45,8 @@ class TurnLogicTest {
     @Test
     void testLandOnOwnProperty() {
         String[] players = {"player1", "player2"};
-        int[] predeterminedValues = {1};
-        Game game = setupTestGame(players, predeterminedValues);
+        int[] predeterminedDiceValues = {1};
+        Game game = setupTestGame(players, predeterminedDiceValues);
 
         game.setOwnerIndex(1, 0); //sets player1 as the owner of the second tile on the board (the burger bar).
 
@@ -60,8 +60,8 @@ class TurnLogicTest {
     @Test
     void testLandOnStart() {
         String[] players = {"player1", "player2"};
-        int[] predeterminedValues = {2};
-        Game game = setupTestGame(players, predeterminedValues);
+        int[] predeterminedDiceValues = {2};
+        Game game = setupTestGame(players, predeterminedDiceValues);
 
         game.setPlayerPosition(0, 22);
 
@@ -74,8 +74,8 @@ class TurnLogicTest {
     @Test
     void testPassStart() {
         String[] players = {"player1", "player2"};
-        int[] predeterminedValues = {3};
-        Game game = setupTestGame(players, predeterminedValues);
+        int[] predeterminedDiceValues = {3};
+        Game game = setupTestGame(players, predeterminedDiceValues);
 
         game.setPlayerPosition(0, 22);
 
@@ -90,8 +90,8 @@ class TurnLogicTest {
     @Test
     void testContinueFromLastPosition() {
         String[] players = {"player1", "player2"};
-        int[] predeterminedValues = {3, 5};
-        Game game = setupTestGame(players, predeterminedValues);
+        int[] predeterminedDiceValues = {3, 5};
+        Game game = setupTestGame(players, predeterminedDiceValues);
 
         TurnLogic turn = new TurnLogic(game, 0);
         turn.runTurn();
@@ -104,17 +104,38 @@ class TurnLogicTest {
     @Test
     void testOutcomes() {
         String[] players = {"player1", "player2"};
-        int[] predeterminedValues = {1, 2, 3, 6};
-        Game game = setupTestGame(players, predeterminedValues);
+        int[] predeterminedDiceValues = {1, 1, 1, 3, 6, 6};
+        Game game = setupTestGame(players, predeterminedDiceValues);
+        game.setOwnerIndex(2, 1);
 
         TurnLogic turn = new TurnLogic(game, 0);
         turn.runTurn();
         assertEquals("boughtOwnable", turn.getOutCome());
         turn.runTurn();
+        assertEquals("paidRent", turn.getOutCome());
+        turn.runTurn();
         assertEquals("chance", turn.getOutCome());
         turn.runTurn();
         assertEquals("jailOnVisit", turn.getOutCome());
         turn.runTurn();
-        assertEquals("jailOnVisit", turn.getOutCome());
+        assertEquals("refuge", turn.getOutCome());
+        turn.runTurn();
+        assertEquals("gotojail", turn.getOutCome());
+    }
+
+    @Test
+    void testBankruptcyOutcome() {
+        String[] players = {"player1", "player2", "player3", "player4"};
+        int[] predeterminedDiceValues = {1, 1};
+        Game game = setupTestGame(players, predeterminedDiceValues);
+        game.setPlayerBalance(0, 1);
+
+        assertEquals(1, game.getPlayerBalances()[0]);
+        TurnLogic turn = new TurnLogic(game, 0);
+        turn.runTurn();
+        assertEquals("boughtOwnable", turn.getOutCome());
+        assertEquals(0, game.getPlayerBalances()[0]);
+        turn.runTurn();
+        assertEquals("bankrupt", turn.getOutCome());
     }
 }
