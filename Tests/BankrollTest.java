@@ -55,6 +55,8 @@ class BankrollTest {
         assertTrue(testPlayer.getBankroll() != null); //tests if the bankroll attribute is empty or not
 
         assertTrue(testPlayer.getBankroll() instanceof Bankroll); //tests if the bankroll attribute is a Bankroll object
+
+        assertEquals(testPlayer.getBankroll().getBalance(), 0); //tests if the starting balance is 0 at instantiation
     }
 
 }
