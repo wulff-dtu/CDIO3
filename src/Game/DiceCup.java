@@ -1,6 +1,6 @@
 package Game;
 
-public class DiceCup {
+public class DiceCup implements DiceCupInterface {
 
     private Die[] dice;
     private int sum;

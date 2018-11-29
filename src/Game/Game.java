@@ -4,7 +4,7 @@ public class Game {
 
     private Player[] players;
     private Board board;
-    private DiceCup diceCup;
+    private DiceCupInterface diceCup;
 
     public Game(String[] playerNames) {
         addPlayers(playerNames);
@@ -92,6 +92,10 @@ public class Game {
         return names;
     }
 
+    public void setPlayerBalance(int i, int balance) {
+        players[i].getBankroll().setBalance(balance);
+    }
+
     public int[] getDiceValues() {
         return diceCup.getValueArray();
     }
@@ -100,17 +104,25 @@ public class Game {
         return board.getTiles()[i].getTitle();
     }
 
-    //TODO: Modify this method, so that there may be more than one winner.
+    //TODO: Doesn't work yet. Should not assign a name to winners[0], since this will only return one winner. There may be two or more winners.
     public String getWinnerName() {
-        String winnerName = "";
+        String winner = "";
         int maxBalance = 0;
         for (int i = 0; i < players.length; i++) {
             if (players[i].getBankroll().getBalance() >= maxBalance){
                 maxBalance = players[i].getBankroll().getBalance();
-                winnerName = players[i].getName();
+                winner = players[i].getName();
             }
         }
-        return winnerName;
+        return winner;
+    }
+
+    public int getTilePrice(int i) {
+        return board.getTiles()[i].getPrice();
+    }
+
+    public void setDiceCup(DiceCupInterface diceCup) {
+        this.diceCup = diceCup;
     }
 
     public boolean isPlayerInJail(int playerIndex) {
