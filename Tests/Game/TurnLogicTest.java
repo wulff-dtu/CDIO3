@@ -7,17 +7,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class TurnLogicTest {
 
-    private Game getTestGame(String[] players, int[] predeterminedValues) {
-        MockDiceCup diceCup = new MockDiceCup(predeterminedValues);
-        Game game = new Game(players);
-        game.setDiceCup(diceCup);
-        for (int i = 0; i < predeterminedValues.length; i++) {
-            TurnLogic turn = new TurnLogic(game, 0);
-            turn.runTurn();
-        }
-        return game;
-    }
-
     private Game setupTestGame(String[] players, int[] predeterminedValues) {
         MockDiceCup diceCup = new MockDiceCup(predeterminedValues);
         Game game = new Game(players);
@@ -96,5 +85,36 @@ class TurnLogicTest {
         //Player 1's balance should be 21, because player 1 will land on Burger Bar and buy it for 1,
         // but at the same time receives 2.
         assertEquals(21, game.getPlayerBalances()[0]);
+    }
+
+    @Test
+    void testContinueFromLastPosition() {
+        String[] players = {"player1", "player2"};
+        int[] predeterminedValues = {3, 5};
+        Game game = setupTestGame(players, predeterminedValues);
+
+        TurnLogic turn = new TurnLogic(game, 0);
+        turn.runTurn();
+        turn = new TurnLogic(game, 0);
+        turn.runTurn();
+
+        assertEquals(8, game.getPlayerPositions()[0]);
+    }
+
+    @Test
+    void testOutcomes() {
+        String[] players = {"player1", "player2"};
+        int[] predeterminedValues = {1, 2, 3, 6};
+        Game game = setupTestGame(players, predeterminedValues);
+
+        TurnLogic turn = new TurnLogic(game, 0);
+        turn.runTurn();
+        assertEquals("boughtOwnable", turn.getOutCome());
+        turn.runTurn();
+        assertEquals("chance", turn.getOutCome());
+        turn.runTurn();
+        assertEquals("jailOnVisit", turn.getOutCome());
+        turn.runTurn();
+        assertEquals("jailOnVisit", turn.getOutCome());
     }
 }

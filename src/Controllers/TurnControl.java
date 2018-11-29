@@ -112,6 +112,8 @@ public class TurnControl {
             case "gotojail" :
                 gui.displayGoToJail(playerName);
                 break;
+            case "freeParking" :
+                break;
             case "bankrupt" :
                 gui.displayBankruptcy(playerName);
                 break;

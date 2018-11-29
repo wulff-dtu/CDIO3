@@ -47,7 +47,7 @@ public class TurnLogic {
      * if calculatedPosition is larger than the length of the board.
      */
     private void checkStartPassed() {
-        if (calculatedNewPosition > game.getBoardLength()) {
+        if (calculatedNewPosition >= game.getBoardLength()) {
             game.changePlayerBalance(playerIndex, game.getStartEffect());
             startPassed = true;
         }
