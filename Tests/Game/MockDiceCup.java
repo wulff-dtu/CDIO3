@@ -1,7 +1,5 @@
 package Game;
 
-import Interfaces.DiceCupInterface;
-
 public class MockDiceCup implements DiceCupInterface {
 
     private int sum;

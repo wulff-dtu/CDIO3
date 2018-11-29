@@ -1,7 +1,5 @@
 package Game;
 
-import Interfaces.DiceCupInterface;
-
 public class Game {
 
     private Player[] players;

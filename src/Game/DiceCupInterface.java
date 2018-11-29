@@ -1,4 +1,4 @@
-package Interfaces;
+package Game;
 
 import Game.Die;
 

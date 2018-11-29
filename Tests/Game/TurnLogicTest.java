@@ -1,6 +1,5 @@
 package Game;
 
-import Interfaces.DiceCupInterface;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -20,7 +19,7 @@ class TurnLogicTest {
         int[] predeterminedDiceValues = {1};
         Game game = setupTestGame(players, predeterminedDiceValues);
 
-        assertEquals(0, game.getOwnerIndex(-1)); //checks that the tile is not owned by anyone.
+        assertEquals(-1, game.getOwnerIndex(1)); //checks that the tile is not owned by anyone.
 
         TurnLogic turn = new TurnLogic(game, 0);
         turn.runTurn();
