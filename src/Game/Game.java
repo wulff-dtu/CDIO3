@@ -117,20 +117,8 @@ public class Game {
         return winner;
     }
 
-    public int getTilePrice(int i) {
-        return board.getTiles()[i].getPrice();
-    }
-
     public void setDiceCup(DiceCupInterface diceCup) {
         this.diceCup = diceCup;
-    }
-
-    public boolean isPlayerInJail(int playerIndex) {
-        return players[playerIndex].isInJail();
-    }
-
-    public void setPlayerInJail(int playerIndex, boolean jail) {
-        players[playerIndex].setInJail(jail);
     }
 }
 
