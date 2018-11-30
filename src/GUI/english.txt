@@ -129,7 +129,7 @@ Chance
 board_chance_description
 
 rules
-The game is played by two to four players. Each turn, a player get to move forward and buy a plot if it is not owned by anyone, or pay rent if it is. If a player can't afford to buy og pay rent, he or she loses the game, and the player with the most money wins. Every time a player passes the start tile, he/she gets 2 money. Depending on whether you are to, three or four players, each player starts with 20, 18 or 16 money.
+The game is played by two to four players. Each turn, a player get to move forward and buy a plot if it is not owned by anyone, or pay rent if it is. If a player can't afford to buy og pay rent, he or she loses the game, and the player with the most money wins. Every time a player passes the start tile, he/she gets 2 money. Depending on whether you are two, three or four players, each player starts with 20, 18 or 16 money.
 
 change_language_header
 Please choose your language:

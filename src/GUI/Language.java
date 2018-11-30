@@ -3,7 +3,6 @@ package GUI;
 import java.io.*;
 import java.util.Map;
 import java.util.HashMap;
-import java.util.Scanner;
 
 /**
  * The constructor defines an array, "stringsID", with the ID's of all strings
@@ -11,7 +10,8 @@ import java.util.Scanner;
  */
 public class Language {
 
-    private File file;
+    private String fileName;
+    private InputStream is;
     private Map<String, String> map;
     private String[] stringsID = {
         "main_menu_header",
@@ -85,16 +85,14 @@ public class Language {
     }
 
     private void mapStrings() {
-        try {
-            Scanner scanner = new Scanner(file);
-            map = new HashMap<>();
-            for(String id : stringsID) {
+        map = new HashMap<>();
+        for(String id : stringsID) {
+            try {
                 map.put(id, searchFileforString(id));
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         }
-
     }
 
     /**
@@ -102,28 +100,29 @@ public class Language {
      * and returns the corresponding message, found on the next line. Only works when language.txt is structured
      * as one line of the messageID followed by one line of the actual message
      */
-    private String searchFileforString(String stringID) {
+    private String searchFileforString(String stringID) throws IOException {
         String message = "StringID: \"" + stringID + "\" not found.";
-        try {
-            Scanner scanner = new Scanner(file);
-            while (scanner.hasNextLine()) {
-                String line = scanner.nextLine();
-                if(line.equals(stringID)) {
-                    message = scanner.nextLine();
-                    break;
-                }
-            }
-            scanner.close();
-            if(message.equals("StringID: \"" + stringID + "\" not found."))
-                System.err.println("A key-value set does not match! Key: " + stringID);
-        } catch(FileNotFoundException e) {
-            System.out.println("File doesn't exist!");
+
+        is = getClass().getResourceAsStream(fileName);
+        InputStreamReader isr = new InputStreamReader(is);
+        BufferedReader br = new BufferedReader(isr);
+
+        String line;
+        while ((line = br.readLine()) != null) {
+            if (line.equals(stringID)) message = br.readLine();
         }
+
+        br.close();
+        isr.close();
+        is.close();
+
+        if(message.equals("StringID: \"" + stringID + "\" not found."))
+            System.err.println("A key-value set does not match! Key: " + stringID);
         return message;
     }
 
     public void changeLanguage(String language) {
-        file = new File("src/GUI/"+language.toLowerCase()+".txt");
+        fileName = language.toLowerCase() + ".txt";
         mapStrings();
     }
 
