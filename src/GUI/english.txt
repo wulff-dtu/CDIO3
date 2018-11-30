@@ -29,43 +29,107 @@ end_game_congratulations
 Congratulations,
 
 end_game_youwon
-you won the Game!
+you won the game!
 
-board_tower_message
-Yay, you found 250 in a tower. Getting richer!
+board_burgerbar_title
+Burger bar
 
-board_crater_message
-Oh no! You fell into a crater. -100.
+board_pizzaria_title
+Pizzaria
 
-board_palace_gates_message
-You entered the palace gates and received 100! Good for you.
+board_candystore_title
+Candy shop
 
-board_cold_desert_message
-Uh, you landed in the cold desert. -20.
+board_icecream_title
+Ice cream shop
 
-board_walled_city_message
-You entered the walled city. Nice! You receive 180
+board_museum_title
+Museum
 
-board_monastery_message
-You are passing some time in the monastery away from the trouble of the rest of the world. No effect on your economy.
+board_library_title
+Library
 
-board_black_cave_message
-Oh no. You landed in the black cave. The cave monsters took 70.
+board_gamearcade_title
+Game arcade
 
-board_huts_message
-You found 60 in the huts in the mountain, hooray.
+board_cinema_title
+Cinema
 
-board_werewall_message
-Oops, you touched the Werewall and the werewolf ate 80. You get to cast the dice again though.
+board_toystore_title
+Toy store
 
-board_pit_message
-You fell into a pit and lost 50
+board_petshop_title
+Pet shop
 
-board_goldmine_message
-You found gold in the mountains and sell it for 650, you’re rich!
+board_skatepark_title
+Skate park
+
+board_swimmingpool_title
+Swimming pool
+
+board_bowlinghall_title
+Bowling hall
+
+board_zoo_title
+Zoo
+
+board_waterpark_title
+Water park
+
+board_seafront_title
+Seafront
+
+board_start_title
+Start
+
+board_chance_title
+Chance
+
+board_jailonvisit_title
+On visit
+
+board_freeparking_title
+Free parking
+
+board_freeparking_subtext
+Free parking
+
+board_freeparking_description
+Free parking
+
+board_gotojail_title
+Go to jail
+
+board_ownable_subtext
+
+board_ownable_forsale
+For sale
+
+board_ownable_ownedby
+Owned by:
+
+board_start_subtext
+Receive:
+
+board_start_description
+
+board_jailonvisit_subtext
+On visit
+
+board_jailonvisit_description
+
+board_gotojail_subtext
+Go to jail
+
+board_gotojail_description
+
+board_chance_subtext
+Chance
+
+board_chance_description
 
 rules
-The players take turns rolling two dice, landing on tiles numbered 2-12. Landing on each of these tiles have a positive or negative effect on the players’ bankroll. The players have a bankroll of 1000 when the Game starts. A player wins the Game by reaching 3000.
+The game is played by two to four players. Each turn, a player get to move forward and buy a plot if it is not owned by anyone, or pay rent if it is. If a player can't afford to buy og pay rent, he or she loses the game, and the player with the most money wins. Every time a player passes the start tile, he/she gets 2 money. Depending on whether you are to, three or four players, each player starts with 20, 18 or 16 money.
 
 change_language_header
 Please choose your language:
@@ -84,3 +148,33 @@ Please choose number of players:
 
 main_start_writeplayername
 Please enter the name of player
+
+player_action_passStart
+passed start and receives
+
+player_action_buy1
+buys
+
+player_action_buy2
+for
+
+player_action_payrent1
+is owned by
+
+player_action_payrent2
+pays
+
+player_action_payrent3
+in rent to
+
+player_action_pickChance
+landed on "chance" and gets to pick a chance card!
+
+player_action_visitJail
+is on visit in the jail.
+
+player_action_goToJail
+is arrested an put in jail!
+
+player_action_bankruptcy
+can not afford to pay the price or rent and is then bankrupt! The winner will now be announced...

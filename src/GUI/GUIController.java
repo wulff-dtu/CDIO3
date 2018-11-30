@@ -1,17 +1,29 @@
 package GUI;
 
+import gui_fields.GUI_Field;
+import gui_fields.GUI_Player;
 import gui_main.GUI;
+
+import java.awt.*;
 
 public class GUIController {
 
     private GUI gui;
+    private GUI_Player[] gui_players;
+    private GUIBoard GUIboard;
     private Language language;
 
-    public GUIController() {
-        gui = new GUI();
+    public GUIController(String[] boardTypes, String[] boardTitles, int[] boardGroups, String[] prices) {
         language = new Language("english");
+        GUIboard = new GUIBoard(language, boardTypes, boardTitles, boardGroups, prices);
+        gui = new GUI(GUIboard.getFields(), new Color(55, 89, 50));
     }
 
+    /**
+     * @return
+     * Displays the main menu with four options/buttons.
+     * Returns an integer from 1-4.
+     */
     public int mainMenu() {
         String option1 = language.getString("main_menu_option1");
         String option2 = language.getString("main_menu_option2");
@@ -57,7 +69,7 @@ public class GUIController {
         return 0;
     }
 
-    public void displayTurnMessage(String message) {
+    public void displayMessage(String message) {
         gui.showMessage(language.getString(message));
     }
 
@@ -76,7 +88,7 @@ public class GUIController {
     public void displayRules() {
         String rules = language.getString("rules");
         rules += "\n";
-        rules = rules.replaceAll("(.{1,50})\\s+", "$1\n");
+        rules = rules.replaceAll("(.{1,350})\\s+", "$1\n");
         gui.showMessage(rules);
     }
 
@@ -89,9 +101,70 @@ public class GUIController {
         } else if (input.equals(option2)) {
             language.changeLanguage("danish");
         }
+        GUIboard.setFieldTexts(language);
     }
 
     public void displayDice(int[] dice) {
-        gui.setDice(dice[0], dice[1]);
+        if (dice.length == 1) {
+            gui.setDie(dice[0]);
+        } else if (dice.length == 2) {
+            gui.setDice(dice[0], dice[1]);
+        }
+    }
+
+    public void addPlayers(String[] names, int[] balances) {
+        removeAllPlayers();
+        gui_players = new GUI_Player[names.length];
+        for (int i = 0; i < names.length; i++) {
+            gui_players[i] = new GUI_Player(names[i], balances[i]);
+            GUIboard.getFields()[0].setCar(gui_players[i], true);
+        }
+    }
+
+    public void displayPlayers(int[] positions) {
+        GUI_Field[] fields =  GUIboard.getFields();
+        removeAllPlayers();
+        for (int i = 0; i < positions.length; i++) {
+            fields[positions[i]].setCar(gui_players[i], true);
+        }
+    }
+
+    public void removeAllPlayers() {
+        GUI_Field[] fields =  GUIboard.getFields();
+        for (GUI_Field field : fields) {
+            field.removeAllCars();
+        }
+    }
+
+    public void displayPurchase(String playerName, String tileTitle, int price) {
+        gui.showMessage(playerName + " " + language.getString("player_action_buy1") + " " + language.getString(tileTitle) + " " + language.getString("player_action_buy2") + " " + price + ",-");
+    }
+
+    public void displayRentPaid(String playerName, String ownerName, String tileTitle, int rent) {
+        gui.showMessage(language.getString(tileTitle) + " " + language.getString("player_action_payrent1") + " " + ownerName + ". " + playerName + " " + language.getString("player_action_payrent2") + " " + rent + ",- " + language.getString("player_action_payrent3") + " " + ownerName);
+    }
+
+    public void displayStartPassed(String playerName, int startEffect) {
+        gui.showMessage(playerName + " " + language.getString("player_action_passStart") + " " + startEffect + ",-");
+    }
+
+    public void setOwnership(String playerName, int i) {
+        GUIboard.setOwnership(language, playerName, i);
+    }
+
+    public void displayLandOnChance(String playerName) {
+        gui.showMessage(playerName + " " + language.getString("player_action_pickChance"));
+    }
+
+    public void displayVisitJail(String playerName) {
+        gui.showMessage(playerName + " " + language.getString("player_action_visitJail"));
+    }
+
+    public void displayGoToJail(String playerName) {
+        gui.showMessage(playerName + " " + language.getString("player_action_goToJail"));
+    }
+
+    public void displayBankruptcy(String playerName) {
+        gui.showMessage(playerName + " " + language.getString("player_action_bankruptcy"));
     }
 }
