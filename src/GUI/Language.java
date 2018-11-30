@@ -3,7 +3,6 @@ package GUI;
 import java.io.*;
 import java.util.Map;
 import java.util.HashMap;
-import java.util.Scanner;
 
 /**
  * The constructor defines an array, "stringsID", with the ID's of all strings
